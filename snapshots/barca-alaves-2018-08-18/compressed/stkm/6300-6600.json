@@ -1,0 +1,81 @@
+{
+  "window": {
+    "start": 6300,
+    "end": 6600,
+    "minute_range": "105-110",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 1,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 2
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 1
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 1
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 6336,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Philippe Coutinho Correia"
+    },
+    {
+      "ts": 6416,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Philippe Coutinho Correia"
+    },
+    {
+      "ts": 6422,
+      "type": "FOUL",
+      "team": "Deportivo Alavés",
+      "player": "Rubén Duarte Sánchez"
+    },
+    {
+      "ts": 6492,
+      "type": "GOAL",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini",
+      "on_target": true
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

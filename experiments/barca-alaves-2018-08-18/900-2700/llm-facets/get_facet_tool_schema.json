@@ -1,0 +1,18 @@
+{
+  "name": "get_facet",
+  "description": "Fetches an extra compressed facet for a 5-minute window to enrich question generation.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "gameId": { "type": "string", "description": "The game identifier used when creating snapshots" },
+      "start": { "type": "number", "description": "Window start time in seconds (e.g. 2700)" },
+      "end": { "type": "number", "description": "Window end time in seconds (e.g. 3000)" },
+      "facet": {
+        "type": "string",
+        "enum": ["PTF","PAD","SPT","FTT","PCS","KH","MMH","NCMS"],
+        "description": "Which facet to fetch: PTF (Player Threat Focus), PAD (Pressure & Discipline), SPT (Set-Piece Threat), FTT (Field Tilt & Territory), PCS (Possession Chains Summary), KH (Keeper Heat), MMH (Minimal Market Hooks), NCMS (Narrative Capsule + Stats)."
+      }
+    },
+    "required": ["gameId","start","end","facet"]
+  }
+}

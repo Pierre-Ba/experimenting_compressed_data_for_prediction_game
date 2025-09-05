@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 5400,
+    "end": 5700,
+    "minute_range": "90-95",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 1
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 1
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 5
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 5593,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Philippe Coutinho Correia"
+    },
+    {
+      "ts": 5625,
+      "type": "FOUL",
+      "team": "Deportivo Alavés",
+      "player": "Manuel Alejandro García Sánchez"
+    },
+    {
+      "ts": 5656,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Luis Alberto Suárez Díaz"
+    },
+    {
+      "ts": 5658,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Sergi Roberto Carnicer"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": -1
+    },
+    "card_delta": {
+      "home": -1,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

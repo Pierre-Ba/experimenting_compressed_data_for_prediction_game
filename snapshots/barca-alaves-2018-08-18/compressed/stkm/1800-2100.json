@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 1800,
+    "end": 2100,
+    "minute_range": "30-35",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 1
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 4
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 1901,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 1905,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Ousmane Dembélé"
+    },
+    {
+      "ts": 2070,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Jordi Alba Ramos"
+    },
+    {
+      "ts": 2094,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Ousmane Dembélé"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 7200,
+    "end": 7500,
+    "minute_range": "120-125",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 1,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 1,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 1,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 2
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 7359,
+      "type": "FOUL",
+      "team": "Barcelona",
+      "player": "Ivan Rakitić"
+    },
+    {
+      "ts": 7395,
+      "type": "KEY_PASS",
+      "team": "Deportivo Alavés",
+      "player": "Ibai Gómez Pérez"
+    },
+    {
+      "ts": 7397,
+      "type": "SHOT",
+      "team": "Deportivo Alavés",
+      "player": "Adrián Marín Gómez"
+    },
+    {
+      "ts": 7410,
+      "type": "PASS_INTO_BOX",
+      "team": "Deportivo Alavés",
+      "player": "Martín Aguirregabiria Padilla"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 1,
+      "away": -1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

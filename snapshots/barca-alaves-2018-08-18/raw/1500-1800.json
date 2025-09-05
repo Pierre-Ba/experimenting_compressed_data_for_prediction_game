@@ -1,0 +1,38 @@
+[
+  {
+    "ts": 1506,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  },
+  {
+    "ts": 1587,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1639,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Ibai Gómez Pérez"
+  },
+  {
+    "ts": 1687,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Mubarak Wakaso",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1731,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "ts": 329,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić"
+  },
+  {
+    "ts": 337,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 339,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        35.5,
+        1
+      ]
+    }
+  },
+  {
+    "ts": 340,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 555,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Daniel Alejandro Torres Rojas",
+    "data": {
+      "card": "Yellow Card"
+    }
+  }
+]

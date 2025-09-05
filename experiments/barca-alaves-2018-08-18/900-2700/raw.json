@@ -1,0 +1,459 @@
+[
+  {
+    "ts": 929,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        117.5,
+        38,
+        0.7
+      ]
+    }
+  },
+  {
+    "ts": 930,
+    "type": "SHOT_SAVED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 978,
+    "type": "KEY_PASS",
+    "team": "Deportivo Alavés",
+    "player": "Manuel Alejandro García Sánchez"
+  },
+  {
+    "ts": 980,
+    "type": "SHOT",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Sobrino Pozuelo",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        32.5,
+        1.1
+      ]
+    }
+  },
+  {
+    "ts": 980,
+    "type": "SHOT_FACED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 1020,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Sobrino Pozuelo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1054,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer"
+  },
+  {
+    "ts": 1089,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1091,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 1096,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        44.4,
+        3.8
+      ]
+    }
+  },
+  {
+    "ts": 1097,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 1180,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Duarte Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1223,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić"
+  },
+  {
+    "ts": 1242,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  },
+  {
+    "ts": 1281,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  },
+  {
+    "ts": 1506,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  },
+  {
+    "ts": 1587,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1639,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Ibai Gómez Pérez"
+  },
+  {
+    "ts": 1687,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Mubarak Wakaso",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1731,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1813,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Sobrino Pozuelo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1840,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 1842,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        59.5
+      ]
+    }
+  },
+  {
+    "ts": 1845,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 1901,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1905,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 1905,
+    "type": "COLLECTED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2070,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 2094,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 2104,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2105,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        32.8,
+        1.5
+      ]
+    }
+  },
+  {
+    "ts": 2106,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2175,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Manuel Alejandro García Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2248,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": false,
+      "sp": "Free Kick",
+      "end_location": [
+        120,
+        43.2,
+        2.8
+      ]
+    }
+  },
+  {
+    "ts": 2249,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2251,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Gerard Piqué Bernabéu",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        37.4,
+        4.5
+      ]
+    }
+  },
+  {
+    "ts": 2252,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2306,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2308,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        112.5,
+        37.2,
+        1.1
+      ]
+    }
+  },
+  {
+    "ts": 2308,
+    "type": "SHOT_SAVED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2351,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 2394,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Sobrino Pozuelo"
+  },
+  {
+    "ts": 2431,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 2435,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        119.3,
+        34.6
+      ]
+    }
+  },
+  {
+    "ts": 2437,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2446,
+    "type": "CARD",
+    "team": "Deportivo Alavés",
+    "player": "Guillermo Alfonso Maripán Loaysa",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 2471,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 2486,
+    "type": "KEEPER_SWEEPER",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 2550,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2581,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2598,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Jonathan Rodríguez Menéndez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2609,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 2610,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 2611,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        49.2,
+        1.3
+      ]
+    }
+  },
+  {
+    "ts": 2612,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2665,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Jonathan Rodríguez Menéndez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2696,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  }
+]

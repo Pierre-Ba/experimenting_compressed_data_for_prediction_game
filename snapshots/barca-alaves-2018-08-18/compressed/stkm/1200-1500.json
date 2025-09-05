@@ -1,0 +1,74 @@
+{
+  "window": {
+    "start": 1200,
+    "end": 1500,
+    "minute_range": "20-25",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 3
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 1223,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Ivan Rakitić"
+    },
+    {
+      "ts": 1242,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Nélson Cabral Semedo"
+    },
+    {
+      "ts": 1281,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Sergio Busquets i Burgos"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": -1,
+      "away": -2
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

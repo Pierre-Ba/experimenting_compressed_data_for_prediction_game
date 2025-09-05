@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 5700,
+    "end": 6000,
+    "minute_range": "95-100",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 1,
+      "away": 2
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 5
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 5928,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Jordi Alba Ramos"
+    },
+    {
+      "ts": 5934,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Luis Alberto Suárez Díaz"
+    },
+    {
+      "ts": 5993,
+      "type": "KEY_PASS",
+      "team": "Barcelona",
+      "player": "Jordi Alba Ramos"
+    },
+    {
+      "ts": 5996,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Philippe Coutinho Correia"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 1,
+      "away": 1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

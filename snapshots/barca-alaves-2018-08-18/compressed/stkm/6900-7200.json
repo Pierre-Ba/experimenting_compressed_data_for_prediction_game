@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 6900,
+    "end": 7200,
+    "minute_range": "115-120",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 1,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 1
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 1
+    },
+    "box_entries": {
+      "home": 1,
+      "away": 4
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 7069,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Ousmane Dembélé"
+    },
+    {
+      "ts": 7075,
+      "type": "FOUL",
+      "team": "Deportivo Alavés",
+      "player": "Adrián Marín Gómez"
+    },
+    {
+      "ts": 7121,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 7185,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Sergi Roberto Carnicer"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": -1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

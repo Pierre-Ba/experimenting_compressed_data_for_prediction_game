@@ -1,0 +1,112 @@
+[
+  {
+    "ts": 6638,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić"
+  },
+  {
+    "ts": 6640,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 6643,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        35.9,
+        2.1
+      ]
+    }
+  },
+  {
+    "ts": 6645,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 6648,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 6657,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić"
+  },
+  {
+    "ts": 6658,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 6660,
+    "type": "KEEPER_SWEEPER",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 6722,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 6768,
+    "type": "SUB",
+    "team": "Deportivo Alavés",
+    "player": "Daniel Alejandro Torres Rojas",
+    "data": {
+      "replacement": "Adrián Marín Gómez"
+    }
+  },
+  {
+    "ts": 6772,
+    "type": "SUB",
+    "team": "Deportivo Alavés",
+    "player": "Jonathan Rodríguez Menéndez",
+    "data": {
+      "replacement": "Borja González Tomás"
+    }
+  },
+  {
+    "ts": 6813,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        101.5,
+        36.6
+      ]
+    }
+  },
+  {
+    "ts": 6814,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 6866,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  }
+]

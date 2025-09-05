@@ -1,0 +1,118 @@
+[
+  {
+    "ts": 2431,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 2435,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        119.3,
+        34.6
+      ]
+    }
+  },
+  {
+    "ts": 2437,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2446,
+    "type": "CARD",
+    "team": "Deportivo Alavés",
+    "player": "Guillermo Alfonso Maripán Loaysa",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 2471,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 2486,
+    "type": "KEEPER_SWEEPER",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 2550,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2581,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2598,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Jonathan Rodríguez Menéndez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2609,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 2610,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 2611,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        49.2,
+        1.3
+      ]
+    }
+  },
+  {
+    "ts": 2612,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2665,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Jonathan Rodríguez Menéndez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2696,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  }
+]

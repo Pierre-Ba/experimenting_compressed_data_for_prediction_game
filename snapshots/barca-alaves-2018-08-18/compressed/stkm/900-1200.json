@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 900,
+    "end": 1200,
+    "minute_range": "15-20",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Deportivo Alavés",
+    "away_name": "Barcelona"
+  },
+  "state": {
+    "shots": {
+      "home": 1,
+      "away": 2
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 1
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 3
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 2,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 1089,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 1091,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Ousmane Dembélé"
+    },
+    {
+      "ts": 1096,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Luis Alberto Suárez Díaz"
+    },
+    {
+      "ts": 1180,
+      "type": "FOUL",
+      "team": "Deportivo Alavés",
+      "player": "Rubén Duarte Sánchez"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 1,
+      "away": 2
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

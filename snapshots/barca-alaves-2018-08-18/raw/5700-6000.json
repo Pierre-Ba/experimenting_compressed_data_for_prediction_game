@@ -1,0 +1,113 @@
+[
+  {
+    "ts": 5767,
+    "type": "SHOT",
+    "team": "Deportivo Alavés",
+    "player": "Mubarak Wakaso",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        109.9,
+        28.8
+      ]
+    }
+  },
+  {
+    "ts": 5767,
+    "type": "SHOT_FACED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 5775,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Duarte Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 5860,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 5861,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 5872,
+    "type": "KEEPER_SWEEPER",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 5918,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 5926,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 5928,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 5934,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        114.8,
+        32.5
+      ]
+    }
+  },
+  {
+    "ts": 5935,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 5993,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 5996,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        98.5,
+        28.6
+      ]
+    }
+  },
+  {
+    "ts": 5996,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  }
+]

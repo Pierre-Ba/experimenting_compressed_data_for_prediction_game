@@ -1,0 +1,71 @@
+[
+  {
+    "ts": 7219,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7272,
+    "type": "SUB",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "replacement": "Arthur Henrique Ramos de Oliveira Melo"
+    }
+  },
+  {
+    "ts": 7311,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Manuel Alejandro García Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7359,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7395,
+    "type": "KEY_PASS",
+    "team": "Deportivo Alavés",
+    "player": "Ibai Gómez Pérez"
+  },
+  {
+    "ts": 7397,
+    "type": "SHOT",
+    "team": "Deportivo Alavés",
+    "player": "Adrián Marín Gómez",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        32.9,
+        1.2
+      ]
+    }
+  },
+  {
+    "ts": 7398,
+    "type": "SHOT_FACED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 7410,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Martín Aguirregabiria Padilla"
+  }
+]

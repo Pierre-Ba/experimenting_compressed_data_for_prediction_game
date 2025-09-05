@@ -1,0 +1,32 @@
+[
+  {
+    "ts": 693,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 770,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  },
+  {
+    "ts": 826,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Ibai Gómez Pérez"
+  },
+  {
+    "ts": 864,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Jonathan Rodríguez Menéndez"
+  },
+  {
+    "ts": 865,
+    "type": "COLLECTED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  }
+]

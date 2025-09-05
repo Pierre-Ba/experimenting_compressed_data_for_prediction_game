@@ -1,0 +1,58 @@
+[
+  {
+    "ts": 6336,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        101.5,
+        28.5
+      ]
+    }
+  },
+  {
+    "ts": 6337,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 6416,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia"
+  },
+  {
+    "ts": 6422,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Duarte Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 6492,
+    "type": "GOAL",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": true,
+      "sp": "Free Kick",
+      "end_location": [
+        120,
+        42.5,
+        0.2
+      ]
+    }
+  },
+  {
+    "ts": 6494,
+    "type": "GOAL_CONCEDED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  }
+]

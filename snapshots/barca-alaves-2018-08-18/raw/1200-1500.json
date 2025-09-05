@@ -1,0 +1,20 @@
+[
+  {
+    "ts": 1223,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ivan Rakitić"
+  },
+  {
+    "ts": 1242,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  },
+  {
+    "ts": 1281,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  }
+]

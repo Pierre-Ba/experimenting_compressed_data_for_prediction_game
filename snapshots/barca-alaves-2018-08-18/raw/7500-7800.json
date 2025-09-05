@@ -1,0 +1,119 @@
+[
+  {
+    "ts": 7522,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia"
+  },
+  {
+    "ts": 7523,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 7546,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia"
+  },
+  {
+    "ts": 7552,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7589,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 7591,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        115.9,
+        34.6,
+        0.4
+      ]
+    }
+  },
+  {
+    "ts": 7592,
+    "type": "SHOT_SAVED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 7657,
+    "type": "ASSIST",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo"
+  },
+  {
+    "ts": 7661,
+    "type": "GOAL",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        42.9,
+        0.5
+      ]
+    }
+  },
+  {
+    "ts": 7662,
+    "type": "GOAL_CONCEDED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 7753,
+    "type": "SUB",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos",
+    "data": {
+      "replacement": "Arturo Erasmo Vidal Pardo"
+    }
+  },
+  {
+    "ts": 7783,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 7785,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo"
+  },
+  {
+    "ts": 7789,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo"
+  },
+  {
+    "ts": 7791,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz",
+    "data": {
+      "card": null
+    }
+  }
+]

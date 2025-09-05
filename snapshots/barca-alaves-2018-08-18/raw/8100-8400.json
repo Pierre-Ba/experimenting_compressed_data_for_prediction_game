@@ -1,0 +1,44 @@
+[
+  {
+    "ts": 8127,
+    "type": "PASS_INTO_BOX",
+    "team": "Deportivo Alavés",
+    "player": "Jorge Franco Alviz"
+  },
+  {
+    "ts": 8134,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Duarte Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 8199,
+    "type": "ASSIST",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 8203,
+    "type": "GOAL",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        36.9,
+        0.2
+      ]
+    }
+  },
+  {
+    "ts": 8203,
+    "type": "GOAL_CONCEDED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  }
+]

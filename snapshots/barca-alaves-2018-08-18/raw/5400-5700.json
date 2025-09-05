@@ -1,0 +1,77 @@
+[
+  {
+    "ts": 5400,
+    "type": "SUB",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo",
+    "data": {
+      "replacement": "Philippe Coutinho Correia"
+    }
+  },
+  {
+    "ts": 5460,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 5538,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer"
+  },
+  {
+    "ts": 5556,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 5559,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        117.6,
+        33.6,
+        0.5
+      ]
+    }
+  },
+  {
+    "ts": 5560,
+    "type": "SHOT_SAVED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 5593,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Philippe Coutinho Correia"
+  },
+  {
+    "ts": 5625,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Manuel Alejandro García Sánchez",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 5656,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 5658,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer"
+  }
+]

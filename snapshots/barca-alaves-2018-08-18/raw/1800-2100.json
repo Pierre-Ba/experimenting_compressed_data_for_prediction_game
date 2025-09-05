@@ -1,0 +1,67 @@
+[
+  {
+    "ts": 1813,
+    "type": "FOUL",
+    "team": "Deportivo Alavés",
+    "player": "Rubén Sobrino Pozuelo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1840,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 1842,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        59.5
+      ]
+    }
+  },
+  {
+    "ts": 1845,
+    "type": "SHOT_FACED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 1901,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1905,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 1905,
+    "type": "COLLECTED",
+    "team": "Deportivo Alavés",
+    "player": "Fernando Pacheco Flores"
+  },
+  {
+    "ts": 2070,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 2094,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  }
+]
