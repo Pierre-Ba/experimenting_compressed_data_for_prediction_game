@@ -1,0 +1,8 @@
+{
+    "window": {"start": 2700, "end": 3000},
+    "tilt": {"home_final_third_time_s": 160, "away_final_third_time_s": 45},
+    "entries": {"final_third": {"home": 10, "away": 3}, "box": {"home": 5, "away": 1}},
+    "passes_into_box": {"home": 4, "away": 0},
+    "crosses": {"home": 3, "away": 0}
+  }
+  

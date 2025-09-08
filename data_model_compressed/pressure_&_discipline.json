@@ -1,0 +1,11 @@
+{
+    "window": {"start": 2700, "end": 3000},
+    "fouls": {"home": 2, "away": 4},
+    "cards": {"home": 0, "away": 1},
+    "hotspots": {"attacking_third_fouls_against_home": 3},
+    "repeat_patterns": {
+      "on_player": [{"name": "Home #10", "times": 2}],
+      "by_player": [{"name": "Away #6", "times": 2}]
+    }
+  }
+  

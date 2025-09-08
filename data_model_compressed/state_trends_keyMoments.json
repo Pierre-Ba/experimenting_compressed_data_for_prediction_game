@@ -1,0 +1,27 @@
+{
+    "window": {"start": 2700, "end": 3000, "period": 2, "minute_range": "45-50"},
+    "score": {"home": 0, "away": 0},
+    "state": {
+      "possession_pct": {"home": 63, "away": 37},
+      "shots": {"home": 4, "away": 1},
+      "shots_on_target": {"home": 2, "away": 0},
+      "box_entries": {"home": 6, "away": 1},
+      "corners": {"home": 2, "away": 0},
+      "fouls": {"home": 2, "away": 3},
+      "cards": {"home": 0, "away": 1}
+    },
+    "trends_vs_prev": {
+      "possession_delta": { "home": "+8" },
+      "shot_pressure_delta": { "home": "+2", "away": "0" },
+      "discipline_delta": { "away_cards": "+1" }
+    },
+    "key_moments": [
+      {"ts": 2921, "type": "SHOT", "team": "Home", "on_target": true, "from": "open_play", "box": true},
+      {"ts": 2954, "type": "CORNER", "team": "Home"},
+      {"ts": 2972, "type": "FOUL", "team": "Away", "card": "Yellow Card"}
+    ],
+    "q_history": [
+      {"minute": 30, "market": "GOAL_IN_INTERVAL", "interval": "30-45", "asked": true, "resolved": false}
+    ]
+  }
+  

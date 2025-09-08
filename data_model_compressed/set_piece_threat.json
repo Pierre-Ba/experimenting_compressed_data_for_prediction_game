@@ -1,0 +1,7 @@
+{
+    "window": {"start": 2700, "end": 3000},
+    "corners": {"home": 2, "away": 0},
+    "free_kicks_danger_zone": {"home": 1, "away": 0},
+    "shots_from_set_pieces": {"home": 1, "away": 0}
+  }
+  

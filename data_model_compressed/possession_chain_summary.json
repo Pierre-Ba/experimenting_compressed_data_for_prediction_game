@@ -1,0 +1,15 @@
+{
+    "window": {"start": 2700, "end": 3000},
+    "chains": [
+      {"team":"Home","dur": 22,"start_third":"mid","end":"shot_on_target","passes":6},
+      {"team":"Home","dur": 15,"start_third":"def","end":"final_third","passes":4},
+      {"team":"Away","dur": 7,"start_third":"def","end":"lost"}
+    ],
+    "counts": {
+      "chains_total": {"home":7,"away":3},
+      "reached_final_third": {"home":5,"away":1},
+      "reached_box": {"home":3,"away":0},
+      "shots": {"home":3,"away":0}
+    }
+  }
+  
