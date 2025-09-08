@@ -1,0 +1,76 @@
+[
+  {
+    "ts": 5400,
+    "type": "SUB",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer",
+    "data": {
+      "replacement": "Rafael Alcântara do Nascimento"
+    }
+  },
+  {
+    "ts": 5489,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 5490,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 5496,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Diego da Silva Costa",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 5542,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 5544,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        109.7,
+        36.9
+      ]
+    }
+  },
+  {
+    "ts": 5545,
+    "type": "SHOT_FACED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 5566,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 5678,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio",
+    "data": {
+      "card": null
+    }
+  }
+]

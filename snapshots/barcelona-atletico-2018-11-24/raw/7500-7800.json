@@ -1,0 +1,77 @@
+[
+  {
+    "ts": 7510,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Lucas Hernández Pi",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7572,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": true,
+      "sp": "Free Kick",
+      "end_location": [
+        119.3,
+        42.8,
+        1.8
+      ]
+    }
+  },
+  {
+    "ts": 7573,
+    "type": "SHOT_SAVED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 7607,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Rafael Alcântara do Nascimento",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7659,
+    "type": "SHOT",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann",
+    "data": {
+      "on_target": false,
+      "sp": "Free Kick",
+      "end_location": [
+        120,
+        42.7,
+        3.5
+      ]
+    }
+  },
+  {
+    "ts": 7661,
+    "type": "SHOT_FACED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 7748,
+    "type": "SUB",
+    "team": "Barcelona",
+    "player": "Arturo Erasmo Vidal Pardo",
+    "data": {
+      "replacement": "Malcom Filipe Silva de Oliveira"
+    }
+  },
+  {
+    "ts": 7788,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  }
+]

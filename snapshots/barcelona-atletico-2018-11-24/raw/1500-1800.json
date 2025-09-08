@@ -1,0 +1,35 @@
+[
+  {
+    "ts": 1569,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1697,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 1768,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann"
+  },
+  {
+    "ts": 1769,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante",
+    "data": {
+      "card": null
+    }
+  }
+]

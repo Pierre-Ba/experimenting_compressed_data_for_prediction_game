@@ -1,0 +1,81 @@
+{
+  "window": {
+    "start": 2100,
+    "end": 2400,
+    "minute_range": "35-40",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 2,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 2,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 1
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 2244,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 2248,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Arturo Erasmo Vidal Pardo"
+    },
+    {
+      "ts": 2302,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Lucas Hernández Pi",
+      "card": "Yellow Card"
+    },
+    {
+      "ts": 2399,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 2,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

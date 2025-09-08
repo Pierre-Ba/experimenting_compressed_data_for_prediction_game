@@ -1,0 +1,74 @@
+[
+  {
+    "ts": 6607,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 6616,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 6643,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Rafael Alcântara do Nascimento",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 6685,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 6688,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 6690,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 6726,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo"
+  },
+  {
+    "ts": 6728,
+    "type": "PUNCH",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 6828,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 6889,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Filipe Luís Kasmirski",
+    "data": {
+      "card": null
+    }
+  }
+]

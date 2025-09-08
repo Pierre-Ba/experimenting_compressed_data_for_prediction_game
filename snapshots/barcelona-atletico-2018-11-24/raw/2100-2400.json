@@ -1,0 +1,58 @@
+[
+  {
+    "ts": 2190,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  },
+  {
+    "ts": 2244,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2248,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Arturo Erasmo Vidal Pardo",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        107.4,
+        46.7
+      ]
+    }
+  },
+  {
+    "ts": 2249,
+    "type": "SHOT_FACED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 2302,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Lucas Hernández Pi",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 2399,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": false,
+      "sp": "Free Kick",
+      "end_location": [
+        120,
+        38.3,
+        3.8
+      ]
+    }
+  }
+]

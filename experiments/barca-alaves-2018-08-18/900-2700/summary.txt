@@ -1,6 +1,0 @@
-Minutes 15-20. Shots Home 1, Away 2. On target Home 0, Away 1. Box entries Home 0, Away 3. Recent moment: Deportivo Alavés FOUL.
-Minutes 20-25. Shots Home 0, Away 0. On target Home 0, Away 0. Box entries Home 0, Away 3. Recent moment: Barcelona PASS_INTO_BOX.
-Minutes 25-30. Shots Home 0, Away 0. On target Home 0, Away 0. Box entries Home 1, Away 2. Recent moment: Barcelona PASS_INTO_BOX.
-Minutes 30-35. Shots Home 0, Away 1. On target Home 0, Away 0. Box entries Home 0, Away 4. Recent moment: Barcelona PASS_INTO_BOX.
-Minutes 35-40. Shots Home 0, Away 4. On target Home 0, Away 1. Box entries Home 1, Away 1. Recent moment: Deportivo Alavés PASS_INTO_BOX.
-Minutes 40-45. Shots Home 0, Away 2. On target Home 0, Away 0. Cards Home 1, Away 0. Box entries Home 0, Away 5. Recent moment: Barcelona PASS_INTO_BOX.

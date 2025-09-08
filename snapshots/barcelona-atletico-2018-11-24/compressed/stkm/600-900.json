@@ -1,0 +1,74 @@
+{
+  "window": {
+    "start": 600,
+    "end": 900,
+    "minute_range": "10-15",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 1,
+      "away": 1
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 1
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 669,
+      "type": "PASS_INTO_BOX",
+      "team": "Atlético Madrid",
+      "player": "Thomas Lemar"
+    },
+    {
+      "ts": 772,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Sergi Roberto Carnicer"
+    },
+    {
+      "ts": 879,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Diego da Silva Costa"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

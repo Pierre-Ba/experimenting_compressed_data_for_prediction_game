@@ -1,0 +1,62 @@
+[
+  {
+    "ts": 8170,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Malcom Filipe Silva de Oliveira",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 8176,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Víctor Machín Pérez"
+  },
+  {
+    "ts": 8200,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Santiago Arias Naranjo"
+  },
+  {
+    "ts": 8201,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann"
+  },
+  {
+    "ts": 8252,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio"
+  },
+  {
+    "ts": 8258,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio"
+  },
+  {
+    "ts": 8267,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Rafael Alcântara do Nascimento",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 8299,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio"
+  },
+  {
+    "ts": 8314,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  }
+]

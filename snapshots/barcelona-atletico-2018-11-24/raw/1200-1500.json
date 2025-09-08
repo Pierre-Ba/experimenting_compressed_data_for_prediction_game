@@ -1,0 +1,47 @@
+[
+  {
+    "ts": 1303,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Thomas Lemar",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1347,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1379,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Gerard Piqué Bernabéu",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1410,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Thomas Lemar"
+  },
+  {
+    "ts": 1440,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Filipe Luís Kasmirski"
+  },
+  {
+    "ts": 1486,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Stefan Savić",
+    "data": {
+      "card": null
+    }
+  }
+]

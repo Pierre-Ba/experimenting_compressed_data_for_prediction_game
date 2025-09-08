@@ -1,0 +1,23 @@
+[
+  {
+    "ts": 6337,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 6501,
+    "type": "SUB",
+    "team": "Atlético Madrid",
+    "player": "Thomas Lemar",
+    "data": {
+      "replacement": "Víctor Machín Pérez"
+    }
+  },
+  {
+    "ts": 6568,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo"
+  }
+]

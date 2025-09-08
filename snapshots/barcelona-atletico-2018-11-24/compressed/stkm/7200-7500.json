@@ -1,0 +1,81 @@
+{
+  "window": {
+    "start": 7200,
+    "end": 7500,
+    "minute_range": "120-125",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 1,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 1
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 1
+    },
+    "box_entries": {
+      "home": 0,
+      "away": 2
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 7289,
+      "type": "PASS_INTO_BOX",
+      "team": "Atlético Madrid",
+      "player": "Jorge Resurrección Merodio"
+    },
+    {
+      "ts": 7312,
+      "type": "ASSIST",
+      "team": "Atlético Madrid",
+      "player": "Antoine Griezmann"
+    },
+    {
+      "ts": 7314,
+      "type": "GOAL",
+      "team": "Atlético Madrid",
+      "player": "Diego da Silva Costa",
+      "on_target": true
+    },
+    {
+      "ts": 7495,
+      "type": "PASS_INTO_BOX",
+      "team": "Atlético Madrid",
+      "player": "Ángel Martín Correa"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 1
+    },
+    "card_delta": {
+      "home": -1,
+      "away": -1
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

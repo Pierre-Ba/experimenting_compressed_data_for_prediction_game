@@ -1,0 +1,81 @@
+{
+  "window": {
+    "start": 5400,
+    "end": 5700,
+    "minute_range": "90-95",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 1,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 3,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 3
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 5542,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 5544,
+      "type": "SHOT",
+      "team": "Barcelona",
+      "player": "Arthur Henrique Ramos de Oliveira Melo"
+    },
+    {
+      "ts": 5566,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Antoine Griezmann",
+      "card": "Yellow Card"
+    },
+    {
+      "ts": 5678,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Jorge Resurrección Merodio"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 1,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

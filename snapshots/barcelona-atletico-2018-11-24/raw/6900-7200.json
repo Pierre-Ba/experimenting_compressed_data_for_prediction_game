@@ -1,0 +1,44 @@
+[
+  {
+    "ts": 6945,
+    "type": "CARD",
+    "team": "Atlético Madrid",
+    "player": "Diego da Silva Costa",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 6958,
+    "type": "CARD",
+    "team": "Barcelona",
+    "player": "Samuel Yves Umtiti",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 7019,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7092,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 7146,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann"
+  }
+]

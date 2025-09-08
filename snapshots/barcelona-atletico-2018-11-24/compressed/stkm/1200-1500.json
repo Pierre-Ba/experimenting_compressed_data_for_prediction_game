@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 1200,
+    "end": 1500,
+    "minute_range": "20-25",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 1,
+      "away": 2
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 2
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 1379,
+      "type": "FOUL",
+      "team": "Barcelona",
+      "player": "Gerard Piqué Bernabéu"
+    },
+    {
+      "ts": 1410,
+      "type": "PASS_INTO_BOX",
+      "team": "Atlético Madrid",
+      "player": "Thomas Lemar"
+    },
+    {
+      "ts": 1440,
+      "type": "PASS_INTO_BOX",
+      "team": "Atlético Madrid",
+      "player": "Filipe Luís Kasmirski"
+    },
+    {
+      "ts": 1486,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Stefan Savić"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": -1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

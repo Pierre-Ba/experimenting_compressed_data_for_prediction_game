@@ -1,0 +1,79 @@
+[
+  {
+    "ts": 956,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  },
+  {
+    "ts": 978,
+    "type": "KEY_PASS",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante"
+  },
+  {
+    "ts": 980,
+    "type": "SHOT",
+    "team": "Atlético Madrid",
+    "player": "Thomas Lemar",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        108.1,
+        33.1
+      ]
+    }
+  },
+  {
+    "ts": 981,
+    "type": "SHOT_FACED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 996,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 1002,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1006,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 1080,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1171,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Arthur Henrique Ramos de Oliveira Melo"
+  },
+  {
+    "ts": 1173,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer"
+  },
+  {
+    "ts": 1174,
+    "type": "COLLECTED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  }
+]

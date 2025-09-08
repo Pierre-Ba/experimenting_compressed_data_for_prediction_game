@@ -1,0 +1,68 @@
+[
+  {
+    "ts": 330,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Filipe Luís Kasmirski"
+  },
+  {
+    "ts": 335,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 384,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio"
+  },
+  {
+    "ts": 385,
+    "type": "COLLECTED",
+    "team": "Barcelona",
+    "player": "Marc-André ter Stegen"
+  },
+  {
+    "ts": 437,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Luis Alberto Suárez Díaz"
+  },
+  {
+    "ts": 472,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 475,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 479,
+    "type": "FOUL",
+    "team": "Barcelona",
+    "player": "Arturo Erasmo Vidal Pardo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 576,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Diego da Silva Costa",
+    "data": {
+      "card": null
+    }
+  }
+]

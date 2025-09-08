@@ -1,0 +1,81 @@
+{
+  "window": {
+    "start": 7800,
+    "end": 8100,
+    "minute_range": "130-135",
+    "period": 3
+  },
+  "score": {
+    "home": 1,
+    "away": 1,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 2,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 1,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 6,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 1
+    },
+    "cards": {
+      "home": 0,
+      "away": 1
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 8024,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Jordi Alba Ramos"
+    },
+    {
+      "ts": 8034,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Rafael Alcântara do Nascimento"
+    },
+    {
+      "ts": 8053,
+      "type": "ASSIST",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 8056,
+      "type": "GOAL",
+      "team": "Barcelona",
+      "player": "Ousmane Dembélé",
+      "on_target": true
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 1,
+      "away": -1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 1
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

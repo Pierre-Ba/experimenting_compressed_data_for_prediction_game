@@ -1,0 +1,44 @@
+[
+  {
+    "ts": 5758,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 5760,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  },
+  {
+    "ts": 5766,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergio Busquets i Burgos"
+  },
+  {
+    "ts": 5777,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Diego da Silva Costa",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 5836,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Filipe Luís Kasmirski",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 5972,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio"
+  }
+]

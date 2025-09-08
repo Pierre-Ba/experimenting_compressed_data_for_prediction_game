@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 6000,
+    "end": 6300,
+    "minute_range": "100-105",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 1,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 3,
+      "away": 1
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 1
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 6123,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 6195,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Filipe Luís Kasmirski"
+    },
+    {
+      "ts": 6248,
+      "type": "PASS_INTO_BOX",
+      "team": "Atlético Madrid",
+      "player": "Antoine Griezmann"
+    },
+    {
+      "ts": 6282,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Nélson Cabral Semedo"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 1,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

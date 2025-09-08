@@ -14,8 +14,16 @@ const app = express();
 app.use(bodyParser.json());
 
 function readRawWindow(gameId, start, end) {
-  const p = path.join(process.cwd(), 'snapshots', gameId, 'raw', `${start}-${end}.json`);
-  if (!fs.existsSync(p)) return null;
+  const p = require('path').join(
+    __dirname,           // <-- folder where facet_server.js lives
+    'data',
+    'raw',
+    `${gameId}-${start}-${end}.json`
+  );
+  if (!fs.existsSync(p)) {
+    console.error('MISS:', p); // temporary debug
+    return null;
+  }
   return JSON.parse(fs.readFileSync(p, 'utf8'));
 }
 

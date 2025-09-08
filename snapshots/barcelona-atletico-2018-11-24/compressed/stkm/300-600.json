@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 300,
+    "end": 600,
+    "minute_range": "5-10",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 2,
+      "away": 2
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 2,
+      "away": 2
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 472,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Rodrigo Hernández Cascante"
+    },
+    {
+      "ts": 475,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 479,
+      "type": "FOUL",
+      "team": "Barcelona",
+      "player": "Arturo Erasmo Vidal Pardo"
+    },
+    {
+      "ts": 576,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Diego da Silva Costa"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

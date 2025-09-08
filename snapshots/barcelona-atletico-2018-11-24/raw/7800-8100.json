@@ -1,0 +1,103 @@
+[
+  {
+    "ts": 7827,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 7891,
+    "type": "CARD",
+    "team": "Atlético Madrid",
+    "player": "Filipe Luís Kasmirski",
+    "data": {
+      "card": "Yellow Card"
+    }
+  },
+  {
+    "ts": 7905,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": false,
+      "sp": "Free Kick",
+      "end_location": [
+        100.1,
+        41.9
+      ]
+    }
+  },
+  {
+    "ts": 7907,
+    "type": "SHOT_FACED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 7927,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 7971,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 7975,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Malcom Filipe Silva de Oliveira"
+  },
+  {
+    "ts": 8011,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé"
+  },
+  {
+    "ts": 8024,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  },
+  {
+    "ts": 8034,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Rafael Alcântara do Nascimento"
+  },
+  {
+    "ts": 8053,
+    "type": "ASSIST",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 8056,
+    "type": "GOAL",
+    "team": "Barcelona",
+    "player": "Ousmane Dembélé",
+    "data": {
+      "on_target": true,
+      "sp": "Open Play",
+      "end_location": [
+        120,
+        41.9,
+        0.4
+      ]
+    }
+  },
+  {
+    "ts": 8057,
+    "type": "GOAL_CONCEDED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  }
+]

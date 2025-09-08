@@ -1,0 +1,35 @@
+[
+  {
+    "ts": 1832,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1893,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 1948,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante"
+  },
+  {
+    "ts": 1990,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Santiago Arias Naranjo",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2042,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Jordi Alba Ramos"
+  }
+]

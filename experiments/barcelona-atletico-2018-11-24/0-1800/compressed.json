@@ -1,36 +1,36 @@
 [
   {
     "window": {
-      "start": 900,
-      "end": 1200,
-      "minute_range": "15-20",
+      "start": 0,
+      "end": 300,
+      "minute_range": "0-5",
       "period": 1
     },
     "score": {
       "home": 0,
       "away": 0,
-      "home_name": "Deportivo Alavés",
-      "away_name": "Barcelona"
+      "home_name": "Barcelona",
+      "away_name": "Atlético Madrid"
     },
     "state": {
       "shots": {
-        "home": 1,
-        "away": 2
+        "home": 0,
+        "away": 0
       },
       "shots_on_target": {
         "home": 0,
-        "away": 1
+        "away": 0
       },
       "box_entries": {
         "home": 0,
-        "away": 3
+        "away": 0
       },
       "corners": {
         "home": 0,
         "away": 0
       },
       "fouls": {
-        "home": 2,
+        "home": 1,
         "away": 0
       },
       "cards": {
@@ -40,34 +40,236 @@
     },
     "key_moments": [
       {
-        "ts": 1089,
+        "ts": 45,
+        "type": "FOUL",
+        "team": "Barcelona",
+        "player": "Sergi Roberto Carnicer"
+      }
+    ]
+  },
+  {
+    "window": {
+      "start": 300,
+      "end": 600,
+      "minute_range": "5-10",
+      "period": 1
+    },
+    "score": {
+      "home": 0,
+      "away": 0,
+      "home_name": "Barcelona",
+      "away_name": "Atlético Madrid"
+    },
+    "state": {
+      "shots": {
+        "home": 0,
+        "away": 0
+      },
+      "shots_on_target": {
+        "home": 0,
+        "away": 0
+      },
+      "box_entries": {
+        "home": 2,
+        "away": 2
+      },
+      "corners": {
+        "home": 0,
+        "away": 0
+      },
+      "fouls": {
+        "home": 2,
+        "away": 2
+      },
+      "cards": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    "key_moments": [
+      {
+        "ts": 472,
+        "type": "FOUL",
+        "team": "Atlético Madrid",
+        "player": "Rodrigo Hernández Cascante"
+      },
+      {
+        "ts": 475,
         "type": "PASS_INTO_BOX",
         "team": "Barcelona",
         "player": "Lionel Andrés Messi Cuccittini"
       },
       {
-        "ts": 1091,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Ousmane Dembélé"
-      },
-      {
-        "ts": 1096,
-        "type": "SHOT",
-        "team": "Barcelona",
-        "player": "Luis Alberto Suárez Díaz"
-      },
-      {
-        "ts": 1180,
+        "ts": 479,
         "type": "FOUL",
-        "team": "Deportivo Alavés",
-        "player": "Rubén Duarte Sánchez"
+        "team": "Barcelona",
+        "player": "Arturo Erasmo Vidal Pardo"
+      },
+      {
+        "ts": 576,
+        "type": "FOUL",
+        "team": "Atlético Madrid",
+        "player": "Diego da Silva Costa"
       }
     ],
     "trends_vs_prev": {
       "shot_delta": {
+        "home": 0,
+        "away": 0
+      },
+      "card_delta": {
+        "home": 0,
+        "away": 0
+      },
+      "corner_delta": {
+        "home": 0,
+        "away": 0
+      }
+    }
+  },
+  {
+    "window": {
+      "start": 600,
+      "end": 900,
+      "minute_range": "10-15",
+      "period": 1
+    },
+    "score": {
+      "home": 0,
+      "away": 0,
+      "home_name": "Barcelona",
+      "away_name": "Atlético Madrid"
+    },
+    "state": {
+      "shots": {
+        "home": 0,
+        "away": 0
+      },
+      "shots_on_target": {
+        "home": 0,
+        "away": 0
+      },
+      "box_entries": {
         "home": 1,
-        "away": 2
+        "away": 1
+      },
+      "corners": {
+        "home": 0,
+        "away": 0
+      },
+      "fouls": {
+        "home": 0,
+        "away": 1
+      },
+      "cards": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    "key_moments": [
+      {
+        "ts": 669,
+        "type": "PASS_INTO_BOX",
+        "team": "Atlético Madrid",
+        "player": "Thomas Lemar"
+      },
+      {
+        "ts": 772,
+        "type": "PASS_INTO_BOX",
+        "team": "Barcelona",
+        "player": "Sergi Roberto Carnicer"
+      },
+      {
+        "ts": 879,
+        "type": "FOUL",
+        "team": "Atlético Madrid",
+        "player": "Diego da Silva Costa"
+      }
+    ],
+    "trends_vs_prev": {
+      "shot_delta": {
+        "home": 0,
+        "away": 0
+      },
+      "card_delta": {
+        "home": 0,
+        "away": 0
+      },
+      "corner_delta": {
+        "home": 0,
+        "away": 0
+      }
+    }
+  },
+  {
+    "window": {
+      "start": 900,
+      "end": 1200,
+      "minute_range": "15-20",
+      "period": 1
+    },
+    "score": {
+      "home": 0,
+      "away": 0,
+      "home_name": "Barcelona",
+      "away_name": "Atlético Madrid"
+    },
+    "state": {
+      "shots": {
+        "home": 0,
+        "away": 1
+      },
+      "shots_on_target": {
+        "home": 0,
+        "away": 0
+      },
+      "box_entries": {
+        "home": 6,
+        "away": 0
+      },
+      "corners": {
+        "home": 0,
+        "away": 0
+      },
+      "fouls": {
+        "home": 0,
+        "away": 1
+      },
+      "cards": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    "key_moments": [
+      {
+        "ts": 1006,
+        "type": "PASS_INTO_BOX",
+        "team": "Barcelona",
+        "player": "Luis Alberto Suárez Díaz"
+      },
+      {
+        "ts": 1080,
+        "type": "PASS_INTO_BOX",
+        "team": "Barcelona",
+        "player": "Lionel Andrés Messi Cuccittini"
+      },
+      {
+        "ts": 1171,
+        "type": "PASS_INTO_BOX",
+        "team": "Barcelona",
+        "player": "Arthur Henrique Ramos de Oliveira Melo"
+      },
+      {
+        "ts": 1173,
+        "type": "PASS_INTO_BOX",
+        "team": "Barcelona",
+        "player": "Sergi Roberto Carnicer"
+      }
+    ],
+    "trends_vs_prev": {
+      "shot_delta": {
+        "home": 0,
+        "away": 1
       },
       "card_delta": {
         "home": 0,
@@ -89,8 +291,8 @@
     "score": {
       "home": 0,
       "away": 0,
-      "home_name": "Deportivo Alavés",
-      "away_name": "Barcelona"
+      "home_name": "Barcelona",
+      "away_name": "Atlético Madrid"
     },
     "state": {
       "shots": {
@@ -102,16 +304,16 @@
         "away": 0
       },
       "box_entries": {
-        "home": 0,
-        "away": 3
+        "home": 1,
+        "away": 2
       },
       "corners": {
         "home": 0,
         "away": 0
       },
       "fouls": {
-        "home": 0,
-        "away": 0
+        "home": 1,
+        "away": 2
       },
       "cards": {
         "home": 0,
@@ -120,28 +322,34 @@
     },
     "key_moments": [
       {
-        "ts": 1223,
-        "type": "PASS_INTO_BOX",
+        "ts": 1379,
+        "type": "FOUL",
         "team": "Barcelona",
-        "player": "Ivan Rakitić"
+        "player": "Gerard Piqué Bernabéu"
       },
       {
-        "ts": 1242,
+        "ts": 1410,
         "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Nélson Cabral Semedo"
+        "team": "Atlético Madrid",
+        "player": "Thomas Lemar"
       },
       {
-        "ts": 1281,
+        "ts": 1440,
         "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Sergio Busquets i Burgos"
+        "team": "Atlético Madrid",
+        "player": "Filipe Luís Kasmirski"
+      },
+      {
+        "ts": 1486,
+        "type": "FOUL",
+        "team": "Atlético Madrid",
+        "player": "Stefan Savić"
       }
     ],
     "trends_vs_prev": {
       "shot_delta": {
-        "home": -1,
-        "away": -2
+        "home": 0,
+        "away": -1
       },
       "card_delta": {
         "home": 0,
@@ -163,8 +371,8 @@
     "score": {
       "home": 0,
       "away": 0,
-      "home_name": "Deportivo Alavés",
-      "away_name": "Barcelona"
+      "home_name": "Barcelona",
+      "away_name": "Atlético Madrid"
     },
     "state": {
       "shots": {
@@ -176,249 +384,8 @@
         "away": 0
       },
       "box_entries": {
-        "home": 1,
-        "away": 2
-      },
-      "corners": {
-        "home": 0,
-        "away": 0
-      },
-      "fouls": {
-        "home": 1,
-        "away": 1
-      },
-      "cards": {
-        "home": 0,
-        "away": 0
-      }
-    },
-    "key_moments": [
-      {
-        "ts": 1587,
-        "type": "FOUL",
-        "team": "Barcelona",
-        "player": "Sergi Roberto Carnicer"
-      },
-      {
-        "ts": 1639,
-        "type": "PASS_INTO_BOX",
-        "team": "Deportivo Alavés",
-        "player": "Ibai Gómez Pérez"
-      },
-      {
-        "ts": 1687,
-        "type": "FOUL",
-        "team": "Deportivo Alavés",
-        "player": "Mubarak Wakaso"
-      },
-      {
-        "ts": 1731,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Lionel Andrés Messi Cuccittini"
-      }
-    ],
-    "trends_vs_prev": {
-      "shot_delta": {
-        "home": 0,
-        "away": 0
-      },
-      "card_delta": {
-        "home": 0,
-        "away": 0
-      },
-      "corner_delta": {
-        "home": 0,
-        "away": 0
-      }
-    }
-  },
-  {
-    "window": {
-      "start": 1800,
-      "end": 2100,
-      "minute_range": "30-35",
-      "period": 1
-    },
-    "score": {
-      "home": 0,
-      "away": 0,
-      "home_name": "Deportivo Alavés",
-      "away_name": "Barcelona"
-    },
-    "state": {
-      "shots": {
         "home": 0,
         "away": 1
-      },
-      "shots_on_target": {
-        "home": 0,
-        "away": 0
-      },
-      "box_entries": {
-        "home": 0,
-        "away": 4
-      },
-      "corners": {
-        "home": 0,
-        "away": 0
-      },
-      "fouls": {
-        "home": 1,
-        "away": 0
-      },
-      "cards": {
-        "home": 0,
-        "away": 0
-      }
-    },
-    "key_moments": [
-      {
-        "ts": 1901,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Lionel Andrés Messi Cuccittini"
-      },
-      {
-        "ts": 1905,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Ousmane Dembélé"
-      },
-      {
-        "ts": 2070,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Jordi Alba Ramos"
-      },
-      {
-        "ts": 2094,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Ousmane Dembélé"
-      }
-    ],
-    "trends_vs_prev": {
-      "shot_delta": {
-        "home": 0,
-        "away": 1
-      },
-      "card_delta": {
-        "home": 0,
-        "away": 0
-      },
-      "corner_delta": {
-        "home": 0,
-        "away": 0
-      }
-    }
-  },
-  {
-    "window": {
-      "start": 2100,
-      "end": 2400,
-      "minute_range": "35-40",
-      "period": 1
-    },
-    "score": {
-      "home": 0,
-      "away": 0,
-      "home_name": "Deportivo Alavés",
-      "away_name": "Barcelona"
-    },
-    "state": {
-      "shots": {
-        "home": 0,
-        "away": 4
-      },
-      "shots_on_target": {
-        "home": 0,
-        "away": 1
-      },
-      "box_entries": {
-        "home": 1,
-        "away": 1
-      },
-      "corners": {
-        "home": 0,
-        "away": 0
-      },
-      "fouls": {
-        "home": 1,
-        "away": 0
-      },
-      "cards": {
-        "home": 0,
-        "away": 0
-      }
-    },
-    "key_moments": [
-      {
-        "ts": 2306,
-        "type": "KEY_PASS",
-        "team": "Barcelona",
-        "player": "Lionel Andrés Messi Cuccittini"
-      },
-      {
-        "ts": 2308,
-        "type": "SHOT",
-        "team": "Barcelona",
-        "player": "Ousmane Dembélé",
-        "on_target": true
-      },
-      {
-        "ts": 2351,
-        "type": "PASS_INTO_BOX",
-        "team": "Barcelona",
-        "player": "Ousmane Dembélé"
-      },
-      {
-        "ts": 2394,
-        "type": "PASS_INTO_BOX",
-        "team": "Deportivo Alavés",
-        "player": "Rubén Sobrino Pozuelo"
-      }
-    ],
-    "trends_vs_prev": {
-      "shot_delta": {
-        "home": 0,
-        "away": 3
-      },
-      "card_delta": {
-        "home": 0,
-        "away": 0
-      },
-      "corner_delta": {
-        "home": 0,
-        "away": 0
-      }
-    }
-  },
-  {
-    "window": {
-      "start": 2400,
-      "end": 2700,
-      "minute_range": "40-45",
-      "period": 1
-    },
-    "score": {
-      "home": 0,
-      "away": 0,
-      "home_name": "Deportivo Alavés",
-      "away_name": "Barcelona"
-    },
-    "state": {
-      "shots": {
-        "home": 0,
-        "away": 2
-      },
-      "shots_on_target": {
-        "home": 0,
-        "away": 0
-      },
-      "box_entries": {
-        "home": 0,
-        "away": 5
       },
       "corners": {
         "home": 0,
@@ -426,46 +393,47 @@
       },
       "fouls": {
         "home": 2,
-        "away": 0
+        "away": 1
       },
       "cards": {
-        "home": 1,
+        "home": 0,
         "away": 0
       }
     },
     "key_moments": [
       {
-        "ts": 2610,
-        "type": "KEY_PASS",
-        "team": "Barcelona",
-        "player": "Jordi Alba Ramos"
-      },
-      {
-        "ts": 2611,
-        "type": "SHOT",
-        "team": "Barcelona",
-        "player": "Ousmane Dembélé"
-      },
-      {
-        "ts": 2665,
+        "ts": 1569,
         "type": "FOUL",
-        "team": "Deportivo Alavés",
-        "player": "Jonathan Rodríguez Menéndez"
+        "team": "Barcelona",
+        "player": "Arthur Henrique Ramos de Oliveira Melo"
       },
       {
-        "ts": 2696,
-        "type": "PASS_INTO_BOX",
+        "ts": 1697,
+        "type": "FOUL",
         "team": "Barcelona",
-        "player": "Lionel Andrés Messi Cuccittini"
+        "player": "Sergio Busquets i Burgos",
+        "card": "Yellow Card"
+      },
+      {
+        "ts": 1768,
+        "type": "PASS_INTO_BOX",
+        "team": "Atlético Madrid",
+        "player": "Antoine Griezmann"
+      },
+      {
+        "ts": 1769,
+        "type": "FOUL",
+        "team": "Atlético Madrid",
+        "player": "Rodrigo Hernández Cascante"
       }
     ],
     "trends_vs_prev": {
       "shot_delta": {
         "home": 0,
-        "away": -2
+        "away": 0
       },
       "card_delta": {
-        "home": 1,
+        "home": 0,
         "away": 0
       },
       "corner_delta": {

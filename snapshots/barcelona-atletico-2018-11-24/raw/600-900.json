@@ -1,0 +1,23 @@
+[
+  {
+    "ts": 669,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Thomas Lemar"
+  },
+  {
+    "ts": 772,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Sergi Roberto Carnicer"
+  },
+  {
+    "ts": 879,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Diego da Silva Costa",
+    "data": {
+      "card": null
+    }
+  }
+]

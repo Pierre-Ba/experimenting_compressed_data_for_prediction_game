@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 900,
+    "end": 1200,
+    "minute_range": "15-20",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 1
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 6,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 0,
+      "away": 1
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 1006,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Luis Alberto Suárez Díaz"
+    },
+    {
+      "ts": 1080,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Lionel Andrés Messi Cuccittini"
+    },
+    {
+      "ts": 1171,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Arthur Henrique Ramos de Oliveira Melo"
+    },
+    {
+      "ts": 1173,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Sergi Roberto Carnicer"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 1
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

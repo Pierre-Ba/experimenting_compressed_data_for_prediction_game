@@ -1,0 +1,80 @@
+{
+  "window": {
+    "start": 6600,
+    "end": 6900,
+    "minute_range": "110-115",
+    "period": 3
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
+      "home": 0,
+      "away": 0
+    },
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
+    },
+    "box_entries": {
+      "home": 5,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 3
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 6690,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Luis Alberto Suárez Díaz"
+    },
+    {
+      "ts": 6726,
+      "type": "PASS_INTO_BOX",
+      "team": "Barcelona",
+      "player": "Arthur Henrique Ramos de Oliveira Melo"
+    },
+    {
+      "ts": 6828,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Rodrigo Hernández Cascante"
+    },
+    {
+      "ts": 6889,
+      "type": "FOUL",
+      "team": "Atlético Madrid",
+      "player": "Filipe Luís Kasmirski"
+    }
+  ],
+  "trends_vs_prev": {
+    "shot_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "card_delta": {
+      "home": 0,
+      "away": 0
+    },
+    "corner_delta": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

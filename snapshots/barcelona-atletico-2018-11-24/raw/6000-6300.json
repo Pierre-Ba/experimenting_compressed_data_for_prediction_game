@@ -1,0 +1,61 @@
+[
+  {
+    "ts": 6029,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  },
+  {
+    "ts": 6030,
+    "type": "KEY_PASS",
+    "team": "Barcelona",
+    "player": "Arturo Erasmo Vidal Pardo"
+  },
+  {
+    "ts": 6032,
+    "type": "SHOT",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini",
+    "data": {
+      "on_target": false,
+      "sp": "Open Play",
+      "end_location": [
+        94,
+        48.9
+      ]
+    }
+  },
+  {
+    "ts": 6034,
+    "type": "SHOT_FACED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 6123,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 6195,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Filipe Luís Kasmirski",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 6248,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann"
+  },
+  {
+    "ts": 6282,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Nélson Cabral Semedo"
+  }
+]

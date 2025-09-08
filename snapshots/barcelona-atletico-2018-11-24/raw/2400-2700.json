@@ -1,0 +1,47 @@
+[
+  {
+    "ts": 2400,
+    "type": "SHOT_FACED",
+    "team": "Atlético Madrid",
+    "player": "Jan Oblak"
+  },
+  {
+    "ts": 2444,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Rodrigo Hernández Cascante",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2461,
+    "type": "PASS_INTO_BOX",
+    "team": "Barcelona",
+    "player": "Lionel Andrés Messi Cuccittini"
+  },
+  {
+    "ts": 2542,
+    "type": "PASS_INTO_BOX",
+    "team": "Atlético Madrid",
+    "player": "Antoine Griezmann"
+  },
+  {
+    "ts": 2569,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio",
+    "data": {
+      "card": null
+    }
+  },
+  {
+    "ts": 2603,
+    "type": "FOUL",
+    "team": "Atlético Madrid",
+    "player": "Jorge Resurrección Merodio",
+    "data": {
+      "card": null
+    }
+  }
+]
