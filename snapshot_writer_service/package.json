@@ -1,0 +1,14 @@
+{
+    "name": "snapshot-writer",
+    "type": "module",
+    "private": true,
+    "dependencies": {
+        "@supabase/supabase-js": "^2.46.0",
+        "dotenv": "^16.4.5",
+        "eventsource": "^4.0.0",
+        "express": "^4.19.2"
+    },
+    "scripts": {
+        "start": "node src/index.js"
+    }
+}
