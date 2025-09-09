@@ -1,0 +1,10 @@
+{
+    "window": {"start": 2700, "end": 3000},
+    "hooks": {
+      "goal_in_next_interval_score": {"home": 0.78, "away": 0.21},
+      "cards_in_next_interval_score": 0.62,
+      "corners_in_next_interval_score": 0.55,
+      "clean_sheet_likelihood": {"home": 0.71, "away": 0.49}
+    }
+  }
+  
