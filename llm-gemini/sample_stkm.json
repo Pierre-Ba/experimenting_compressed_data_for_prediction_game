@@ -1,48 +1,48 @@
 {
-    "window": {
-      "start": 0,
-      "end": 300,
-      "minute_range": "0-5",
-      "period": 1
-    },
-    "score": {
+  "window": {
+    "start": 0,
+    "end": 300,
+    "minute_range": "0-5",
+    "period": 1
+  },
+  "score": {
+    "home": 0,
+    "away": 0,
+    "home_name": "Barcelona",
+    "away_name": "Atlético Madrid"
+  },
+  "state": {
+    "shots": {
       "home": 0,
-      "away": 0,
-      "home_name": "Barcelona",
-      "away_name": "Atlético Madrid"
+      "away": 0
     },
-    "state": {
-      "shots": {
-        "home": 0,
-        "away": 0
-      },
-      "shots_on_target": {
-        "home": 0,
-        "away": 0
-      },
-      "box_entries": {
-        "home": 0,
-        "away": 0
-      },
-      "corners": {
-        "home": 0,
-        "away": 0
-      },
-      "fouls": {
-        "home": 1,
-        "away": 0
-      },
-      "cards": {
-        "home": 0,
-        "away": 0
-      }
+    "shots_on_target": {
+      "home": 0,
+      "away": 0
     },
-    "key_moments": [
-      {
-        "ts": 45,
-        "type": "FOUL",
-        "team": "Barcelona",
-        "player": "Sergi Roberto Carnicer"
-      }
-    ]
-  }
+    "box_entries": {
+      "home": 0,
+      "away": 0
+    },
+    "corners": {
+      "home": 0,
+      "away": 0
+    },
+    "fouls": {
+      "home": 1,
+      "away": 0
+    },
+    "cards": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  "key_moments": [
+    {
+      "ts": 45,
+      "type": "FOUL",
+      "team": "Barcelona",
+      "player": "Sergi Roberto Carnicer"
+    }
+  ]
+}

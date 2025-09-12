@@ -2,16 +2,17 @@
 // Usage: node sb-replay-server.js ./events.json --port=4000 --speed=6
 // SSE stream of StatsBomb open-data events, normalized for easy consumption.
 
-const fs = require('fs');
-const http = require('http');
-const url = require('url');
+import fs from 'fs';
+import http from 'http';
+import url from 'url';
 
 const args = process.argv.slice(2);
-if (!args[0]) {
-  console.error('Provide path to a StatsBomb events.json, e.g. node sb-replay-server.js ./events.json');
+const fileArg = args.find(a => a.startsWith('--file='));
+const EVENTS_PATH = fileArg ? fileArg.split('=')[1] : args[0];
+if (!EVENTS_PATH) {
+  console.error('Provide path to a StatsBomb events.json, e.g. node sb-replay-server.js --file=./events.json');
   process.exit(1);
 }
-const EVENTS_PATH = args[0];
 const PORT = Number((args.find(a => a.startsWith('--port=')) || '').split('=')[1] || 4000);
 const SPEED = Number((args.find(a => a.startsWith('--speed=')) || '').split('=')[1] || 6); // 1=real-time, 6=6x faster
 

@@ -35,10 +35,17 @@ async function postJSON(url, body) {
 // Set your game id for the run (use your own naming convention).
 const GAME_ID = process.env.GAME_ID || 'barcelona-atletico-2018-11-24';
 
-// Track which 5-min window we’re currently in and the last fully flushed end.
+// Track which 5-min window we're currently in and the last fully flushed end.
 let currentWindowStart = 0;
 let currentWindowEnd = WINDOW;    // [0,300), [300,600), ...
 let lastFlushedEnd = -1;
+
+// Create all 18 windows upfront (0-300, 300-600, ..., 5100-5400)
+const TOTAL_GAME_SECONDS = 90 * 60; // 90 minutes
+const ALL_WINDOWS = [];
+for (let start = 0; start < TOTAL_GAME_SECONDS; start += WINDOW) {
+  ALL_WINDOWS.push({ start, end: start + WINDOW });
+}
 
 // ---- one-time metadata sender on hello ----
 let sentMeta = false;
@@ -138,15 +145,17 @@ async function run() {
   });
 
   es.addEventListener('done', async () => {
-    console.log('replay done: flushing any remaining window…');
-    // Final flush for the current (possibly partially filled) window
+    console.log('replay done: flushing all windows…');
+    // Flush ALL 18 windows to ensure complete coverage
     try {
-      await postJSON(`${SNAPSHOT_URL}/flush`, {
-        gameId: GAME_ID,
-        start: currentWindowStart,
-        end: currentWindowEnd
-      });
-      console.log(`final flush ${currentWindowStart}-${currentWindowEnd}`);
+      for (const window of ALL_WINDOWS) {
+        await postJSON(`${SNAPSHOT_URL}/flush`, {
+          gameId: GAME_ID,
+          start: window.start,
+          end: window.end
+        });
+        console.log(`flushed ${window.start}-${window.end}`);
+      }
     } catch (err) {
       console.error('final flush error:', err.message);
     }

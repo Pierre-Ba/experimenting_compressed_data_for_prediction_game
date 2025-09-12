@@ -1,65 +1,74 @@
+// llm-gemini/run_stkm_local.js
 import 'dotenv/config';
 import fs from 'node:fs';
 import path from 'node:path';
 import { generateWithTools, resolveOneToolCallAndContinue } from './client.js';
 import { SYSTEM_INSTRUCTION } from './prompt.js';
 
+// ---- Env / defaults ----
 const GAME_ID = process.env.GAME_ID || 'barcelona-atletico-2018-11-24';
-const STKM_FILE = process.env.STKM_FILE || path.join(process.cwd(), 'sample_stkm.json');
 const WINDOW_START = Number(process.env.WINDOW_START || 0);
-const WINDOW_END   = Number(process.env.WINDOW_END   || 300);
+const WINDOW_END = Number(process.env.WINDOW_END || 300);
+const STKM_FILE =
+  process.env.STKM_FILE ||
+  // <= If you keep sample_stkm.json in llm-gemini/, run this file from repo root:
+  path.join(process.cwd(), 'sample_stkm.json');
 
-// Guard: STKM file must exist
-if (!fs.existsSync(STKM_FILE)) {
-  console.error(`STKM file not found at: ${STKM_FILE}
-- Either copy a 5-min compressed snapshot to ./llm-gemini/sample_stkm.json
-- Or set STKM_FILE to its path, e.g.:
-  STKM_FILE=./snapshots/<game-id>/compressed/0-300.json node llm-gemini/run_stkm_local.js`);
-  process.exit(1);
-}
-
+// ---- Load STKM snapshot ----
 const stkm = JSON.parse(fs.readFileSync(STKM_FILE, 'utf8'));
 
-// Ask for JSON in the instruction text (since we’re not forcing a MIME type)
-const userPayload = {
-  instructions:
-`Return JSON only: { "run_now": boolean, "reason": string, "batches": { "A":[...], "B":[...] } }.
-Each question: { "market": "...", "prompt": "...", "options":[{label, market_key}], "settle": {"start": <sec>, "end": <sec>} }.
-Use this compressed window (STKM). If you need more details, call get_facet.`,
-  game: GAME_ID,
-  window: { start: WINDOW_START, end: WINDOW_END },
-  stkm
-};
+(async () => {
+  try {
+    // Build the payload (include your Studio-like nudge here)
+    const userPayload = {
+      instructions: `
+You are given a compressed 5-minute football snapshot ("stkm") for ${GAME_ID} covering ${WINDOW_START}–${WINDOW_END}s.
+If this is enough, generate 2–4 multiple-choice betting questions (3 choices each), tied to betting markets.
+If you need more detail, call function get_facet with one of: PTF, PAD, SPT, FTT, PCS, KH, MMH, NCMS.
+Use only the provided data (snapshot or facet). Do not use any other sources.
+`,
+      game: GAME_ID,
+      window: { start: WINDOW_START, end: WINDOW_END },
+      stkm
+    };
 
-// 1) first call
-let resp = await generateWithTools({
-  systemInstruction: SYSTEM_INSTRUCTION,
-  userPayload
-});
+    // 1) First turn
+    const firstTurn = await generateWithTools({
+      systemInstruction: SYSTEM_INSTRUCTION,
+      userPayload
+    });
 
-// 2) resolve one tool call if present, then continue
-resp = await resolveOneToolCallAndContinue(resp, {
-  systemInstruction: SYSTEM_INSTRUCTION,
-  userPayload
-});
+    if (firstTurn.firstCall) {
+      console.log('🔧 TOOL CALL (first turn):', JSON.stringify(firstTurn.firstCall, null, 2));
+      console.log('📡 Fetching facet data...');
+    } else {
+      console.log('✅ NO TOOL CALL on first turn - generating questions directly.');
+    }
 
-// Helper: extract text regardless of shape
-function extractText(r) {
-  const parts = r?.candidates?.[0]?.content?.parts || [];
-  const txt = parts.filter(p => typeof p.text === 'string').map(p => p.text).join('');
-  return txt || '';
-}
+    // 2) Resolve exactly one tool call (if any), then print final text
+    const finalTurn = await resolveOneToolCallAndContinue(firstTurn, {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      userPayload
+    });
 
-// 3) print result
-const outText = extractText(resp);
-console.log(outText || '(empty text)');
+    const finalText = finalTurn.text || '(empty text)';
+    console.log('\n🎯 GENERATED QUESTIONS:');
+    console.log('=' .repeat(50));
+    console.log(finalText);
+    console.log('=' .repeat(50));
 
-try {
-  const out = JSON.parse(outText);
-  console.log('\nBatches summary:', {
-    A: out?.batches?.A?.length || 0,
-    B: out?.batches?.B?.length || 0
-  });
-} catch {
-  // raw print above is fine if not valid JSON
-}
+    // Optional: if still empty, dump a compact view for debugging
+    if (!finalTurn.text) {
+      console.log('DEBUG raw resp (compact):',
+        JSON.stringify({
+          hasCandidates: !!finalTurn?.resp?.candidates,
+          hasResponseTextFn: typeof finalTurn?.resp?.response?.text === 'function',
+          firstCallPresent: !!firstTurn.firstCall
+        })
+      );
+    }
+  } catch (err) {
+    console.error('run_stkm_local failed:', err);
+    process.exitCode = 1;
+  }
+})();

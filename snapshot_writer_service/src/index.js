@@ -8,7 +8,7 @@ import { stkmCompress } from './stkm.js';
  */
 const PORT = Number(process.env.PORT || 7070);
 const WINDOW_SIZE_SEC = Number(process.env.WINDOW_SIZE_SEC || 300);
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
 
 /**
  * In-memory event buckets:
@@ -45,16 +45,29 @@ async function upsertWindow(gameId, start_sec, end_sec) {
 }
 
 async function insertSnapshot(window_id, raw_json, compressed_json, compressed_kind = 'STKM') {
-    const { data, error } = await supabase
+    // Insert raw snapshot
+    const { data: rawData, error: rawError } = await supabase
       .from('snapshots')
       .upsert(
-        [{ window_id, raw_json, compressed_json, compressed_kind }],
-        { onConflict: 'window_id' }
+        [{ window_id, raw_json, compressed_kind: 'raw' }],
+        { onConflict: 'window_id,compressed_kind' }
       )
       .select()
       .single();
-    if (error) throw error;
-    return data;
+    if (rawError) throw rawError;
+
+    // Insert compressed snapshot
+    const { data: compressedData, error: compressedError } = await supabase
+      .from('snapshots')
+      .upsert(
+        [{ window_id, compressed_json, compressed_kind }],
+        { onConflict: 'window_id,compressed_kind' }
+      )
+      .select()
+      .single();
+    if (compressedError) throw compressedError;
+
+    return { raw: rawData, compressed: compressedData };
   }
   
 
