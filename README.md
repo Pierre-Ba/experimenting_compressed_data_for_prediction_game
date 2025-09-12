@@ -80,6 +80,30 @@ Easier context management for long games.
 
 More control over what information the LLM sees.
 
+🎮 Running the Game Simulator
+
+To run the interactive football quiz simulator:
+
+1. **Setup Environment**: Create a `.env` file with your API keys:
+   ```
+   GEMINI_API_KEY=your_gemini_api_key
+   SUPABASE_URL=your_supabase_url
+   SUPABASE_SERVICE_KEY=your_service_key
+   ```
+
+2. **Start Supabase**: Run `supabase start` to start your local database
+
+3. **Populate Database**: Run the snapshot services in this order to populate your database:
+   - `node snapshot_writer_service/src/index.js` (snapshot writer service)
+   - `node snapshot_writer_service/bridge_sse_to_snapshot.js` (bridge to replay server)
+   - `node sb-replay-server.js` (replay server)
+
+4. **Run Simulator**: Once your database is populated, start the simulator and facet server:
+   - `node llm-facets/facet_server.js` (facet server)
+   - `node game_simulator.js` (game simulator)
+
+The simulator will load snapshots from your database and generate interactive questions for different game periods.
+
 📌 Notes for New Contributors
 
 No prior experiments are required to use the repo, but some familiarity with JSON football data (e.g. StatsBomb) helps.
