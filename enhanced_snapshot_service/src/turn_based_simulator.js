@@ -2,7 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { config } from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
-import { generateQuestionsWithOllamaAndFacets, generateHalfTimeSummaryWithOllama } from './ollama_client.js';
+import { generateWithTools, generateSimple } from '../../llm-gemini/client.js';
 import { SYSTEM_INSTRUCTION } from '../../llm-gemini/prompt.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -19,7 +19,7 @@ const supabase = createClient(
 
 // Configuration
 const CONFIG = {
-  PRIMARY_MODEL: process.env.OLLAMA_MODEL || 'llama2:13b',
+  PRIMARY_MODEL: process.env.GEMINI_MODEL || 'gemini-2.5-pro',
   QUESTIONS_PER_ROUND: 7, // Generate 7 questions, user picks 2
   MAX_SNAPSHOTS: 20,
   ROUNDS: {
@@ -88,12 +88,39 @@ The data contains rich details about player actions, tactical patterns, and game
 
   static parseQuestions(text) {
     const questions = [];
+    
+    // Handle function call responses - extract only the final text
+    if (text.includes('[Function call:') || text.includes('Function call:')) {
+      // Try to extract the final response after function calls
+      const finalResponseMatch = text.match(/Tool resolution complete.*?(.*?)$/s);
+      if (finalResponseMatch) {
+        text = finalResponseMatch[1];
+      } else {
+        // If we can't extract clean text, return empty
+        console.log('⚠️  Response contains function calls but no clean text found');
+        return [];
+      }
+    }
+    
     const lines = text.split('\n');
     
-    // Simple approach: look for patterns of question + choices
-    let i = 0;
-    while (i < lines.length) {
+    // Clean up the text first - remove any introductory text
+    let startIndex = 0;
+    for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
+      // Look for the start of actual questions (usually after intro text)
+      if (line.match(/^\d+\./) || line.includes('Will') || line.includes('Which') || line.includes('?')) {
+        startIndex = i;
+        break;
+      }
+    }
+    
+    const relevantLines = lines.slice(startIndex);
+    
+    // Parse questions with better pattern matching
+    let i = 0;
+    while (i < relevantLines.length) {
+      const line = relevantLines[i].trim();
       
       // Skip empty lines
       if (!line) {
@@ -101,45 +128,159 @@ The data contains rich details about player actions, tactical patterns, and game
         continue;
       }
       
-      // Look for question text (not starting with numbers or letters)
-      if (!line.match(/^[\dA-C]\)/) && line.includes('?')) {
-        const questionText = line;
-        const choices = [];
+      // Look for question patterns
+      let questionText = '';
+      let choices = [];
+      
+      // Check if this line starts a question (numbered or question-like)
+      const isQuestionStart = line.match(/^\d+\./) || 
+          (line.includes('?') && line.length > 20) ||
+          (line.includes('Will') && line.length > 20) ||
+          (line.includes('Which') && line.length > 20);
+      
+      if (isQuestionStart) {
+        // Clean up question text - remove any leading numbers and dots
+        questionText = line.replace(/^\d+\.\s*/, '').trim();
+        // Also remove any "1. " pattern that might be embedded
+        questionText = questionText.replace(/^\d+\.\s*/, '').trim();
         
         // Look for choices in following lines
         let j = i + 1;
-        while (j < lines.length && choices.length < 3) {
-          const choiceLine = lines[j].trim();
+        while (j < relevantLines.length && choices.length < 3) {
+          const choiceLine = relevantLines[j].trim();
+          
+          // Skip empty lines
+          if (!choiceLine) {
+            j++;
+            continue;
+          }
           
           // Check for A), B), C) format
           if (choiceLine.match(/^[A-C]\)/)) {
             const choice = choiceLine.replace(/^[A-C]\)\s*/, '').trim();
             if (choice) choices.push(choice);
           }
-          // Check for 1., 2., 3. format
-          else if (choiceLine.match(/^\d+\./)) {
-            const choice = choiceLine.replace(/^\d+\.\s*/, '').trim();
+          // Check for A., B., C. format
+          else if (choiceLine.match(/^[A-C]\./)) {
+            const choice = choiceLine.replace(/^[A-C]\.\s*/, '').trim();
             if (choice) choices.push(choice);
           }
-          // Stop if we hit another question or empty line
-          else if (choiceLine && !choiceLine.includes('?')) {
+        // Check for numbered format (1., 2., 3.) - but not if it's a new question
+        else if (choiceLine.match(/^\d+\./) && !choiceLine.includes('?') && !choiceLine.includes('Will') && !choiceLine.includes('Which')) {
+          const choice = choiceLine.replace(/^\d+\.\s*/, '').trim();
+          if (choice) choices.push(choice);
+        }
+          // Check for bullet points or dashes
+          else if (choiceLine.match(/^[-•*]/)) {
+            const choice = choiceLine.replace(/^[-•*]\s*/, '').trim();
+            if (choice) choices.push(choice);
+          }
+          // Check for "Options:" followed by choices
+          else if (choiceLine.startsWith('Options:')) {
+            const optionsText = choiceLine.replace(/^Options:\s*/, '');
+            // Split by | and clean up
+            const optionParts = optionsText.split('|').map(opt => opt.trim()).filter(opt => opt.length > 0);
+            choices.push(...optionParts);
+          }
+          // Stop if we hit another question
+          else if (choiceLine.match(/^\d+\./) || 
+                   (choiceLine.includes('?') && choiceLine.length > 20) ||
+                   (choiceLine.includes('Will') && choiceLine.length > 20)) {
             break;
           }
           
           j++;
         }
         
+        // Look for RESOLVES_AT timeframe and CHECK_FACET in the question text or following lines
+        let timeframe = 900; // Default 15 minutes
+        let checkFacet = 'goals'; // Default facet
+        const timeframeMatch = questionText.match(/RESOLVES_AT:\s*(\d+)/i);
+        const facetMatch = questionText.match(/CHECK_FACET:\s*([a-zA-Z_]+)/i);
+        
+        if (timeframeMatch) {
+          timeframe = parseInt(timeframeMatch[1]);
+        }
+        if (facetMatch) {
+          checkFacet = facetMatch[1].toLowerCase();
+        }
+        
+        if (timeframeMatch) {
+          questionText = questionText.replace(/RESOLVES_AT:\s*\d+/i, '').trim();
+        }
+        if (facetMatch) {
+          questionText = questionText.replace(/CHECK_FACET:\s*[a-zA-Z_]+/i, '').trim();
+        } else {
+          // Check in the following lines for RESOLVES_AT
+          for (let k = i + 1; k < Math.min(i + 5, relevantLines.length); k++) {
+            const timeframeLine = relevantLines[k].trim();
+            const match = timeframeLine.match(/RESOLVES_AT:\s*(\d+)/i);
+            if (match) {
+              timeframe = parseInt(match[1]);
+              break;
+            }
+          }
+        }
+        
         // If we found a question with at least 2 choices, add it
         if (choices.length >= 2) {
           questions.push({ 
             question: questionText, 
-            options: choices 
+            options: choices.slice(0, 3), // Take up to 3 choices
+            timeframe: timeframe,
+            checkFacet: checkFacet
           });
         }
         
         i = j;
       } else {
         i++;
+      }
+    }
+    
+    // If we still didn't find questions, try a more aggressive approach
+    if (questions.length === 0) {
+      // Look for any text that might be a question followed by choices
+      const textBlocks = text.split(/\n\s*\n/); // Split by double newlines
+      
+      for (const block of textBlocks) {
+        const blockLines = block.trim().split('\n');
+        if (blockLines.length >= 3) { // At least question + 2 choices
+          const firstLine = blockLines[0].trim();
+          const remainingLines = blockLines.slice(1);
+          
+          // Check if first line looks like a question
+          if (firstLine.length > 10 && (firstLine.includes('?') || firstLine.includes('Which') || firstLine.includes('Will'))) {
+            const choices = remainingLines
+              .map(line => line.trim())
+              .filter(line => line.length > 0)
+              .map(line => {
+                // Remove common prefixes
+                return line.replace(/^[A-C]\)\s*/, '')
+                          .replace(/^\d+\.\s*/, '')
+                          .replace(/^[-•*]\s*/, '')
+                          .trim();
+              })
+              .filter(choice => choice.length > 0);
+            
+            if (choices.length >= 2) {
+              // Look for RESOLVES_AT timeframe
+              let timeframe = 900; // Default 15 minutes
+              const timeframeMatch = firstLine.match(/RESOLVES_AT:\s*(\d+)/i);
+              if (timeframeMatch) {
+                timeframe = parseInt(timeframeMatch[1]);
+                firstLine = firstLine.replace(/RESOLVES_AT:\s*\d+/i, '').trim();
+              }
+              
+              questions.push({
+                question: firstLine,
+                options: choices.slice(0, 3), // Take up to 3 choices
+                timeframe: timeframe,
+                checkFacet: 'goals' // Default facet for fallback questions
+              });
+            }
+          }
+        }
       }
     }
     
@@ -155,6 +296,10 @@ class TurnBasedSimulator {
     this.totalQuestions = 0;
     this.halfTimeSummary = null;
     this.activePredictions = []; // Store predictions to check against stream
+    this.generatedQuestions = new Set(); // Track when questions have been generated
+    this.askedQuestions = []; // Track all questions asked for LLM context
+    this.roundNumber = 0; // Track current round number
+    this.cachedFacetData = new Map(); // Cache facet data to avoid additional API calls
   }
 
   async getRecentSnapshots(currentTime) {
@@ -196,12 +341,16 @@ class TurnBasedSimulator {
 
       const events = rawEvents?.map(s => s.raw_json) || [];
       
-      const summaryResult = await generateHalfTimeSummaryWithOllama(
-        'Generate a comprehensive half-time summary of the first half of the game. Focus on key moments, tactical patterns, player performances, and overall game flow.',
-        this.currentGameId,
-        events,
-        CONFIG.PRIMARY_MODEL
-      );
+        const summaryResult = await generateWithTools({
+          systemInstruction: 'Generate a comprehensive half-time summary of the first half of the game. Focus on key moments, tactical patterns, player performances, and overall game flow.',
+          userPayload: {
+            instructions: 'Generate a comprehensive half-time summary of the first half of the game. Focus on key moments, tactical patterns, player performances, and overall game flow.',
+            game: this.currentGameId,
+            window: { start: 0, end: 2700 },
+            stkm: { events: events }
+          },
+          model: CONFIG.PRIMARY_MODEL
+        });
       
       this.halfTimeSummary = summaryResult.error ? 'Half-time summary generation failed.' : summaryResult.text;
       
@@ -219,7 +368,65 @@ class TurnBasedSimulator {
     
     const trendAnalysis = QuestionGenerator.createTrendAnalysis(snapshots);
     
-    let instructions = `Generate exactly ${CONFIG.QUESTIONS_PER_ROUND} betting questions for ${period} of ${this.currentGameId}.`;
+    // Calculate round information
+    this.roundNumber++;
+    const totalRounds = 6; // 2 first half + 2 half-time + 2 second half
+    const remainingRounds = totalRounds - this.roundNumber + 1;
+    
+    // Build context about previous questions
+    let previousQuestionsContext = '';
+    if (this.askedQuestions.length > 0) {
+      previousQuestionsContext = '\n\nPREVIOUS QUESTIONS ASKED (avoid repetition):\n';
+      this.askedQuestions.forEach((q, i) => {
+        previousQuestionsContext += `${i + 1}. ${q.question}\n`;
+      });
+      previousQuestionsContext += '\nIMPORTANT: Do NOT repeat these questions. Create fresh, different questions.';
+    }
+    
+    // Build context about current predictions
+    let predictionsContext = '';
+    if (this.activePredictions.length > 0) {
+      predictionsContext = '\n\nCURRENT ACTIVE PREDICTIONS:\n';
+      this.activePredictions.forEach((pred, i) => {
+        predictionsContext += `${i + 1}. ${pred.question} → ${pred.selectedText} (resolves at ${Math.floor(pred.gameTime/60)}:${(pred.gameTime%60).toString().padStart(2,'0')})\n`;
+      });
+    }
+    
+    // Build game timing context
+    const gameTimeMinutes = Math.floor(currentTime / 60);
+    const gameTimeSeconds = currentTime % 60;
+    const timeRemaining = 90 - gameTimeMinutes;
+    
+      let instructions = `CRITICAL: You MUST generate exactly ${CONFIG.QUESTIONS_PER_ROUND} betting questions. No more, no less.
+
+FORMAT REQUIRED:
+${createQuestionTemplate(CONFIG.QUESTIONS_PER_ROUND)}
+
+ROUND CONTEXT:
+- Current Round: ${this.roundNumber}/${totalRounds}
+- Rounds Remaining: ${remainingRounds}
+- Game Time: ${gameTimeMinutes}:${gameTimeSeconds.toString().padStart(2,'0')}
+- Time Remaining: ~${timeRemaining} minutes
+- Period: ${period}
+
+TIMING AWARENESS:
+- This is round ${this.roundNumber} of ${totalRounds} total rounds
+- ${remainingRounds} rounds remaining in the game
+- You have flexibility to generate questions within time ranges, not at exact moments
+- Make questions relevant to the current game time and remaining time
+- Consider the urgency: later rounds should focus on end-game scenarios
+- Account for injury time and actual game flow timing${previousQuestionsContext}${predictionsContext}
+
+IMPORTANT: For each question, provide:
+1. The exact game time (in seconds) when the prediction should be resolved
+2. Which facet to check for evaluation
+Format: "RESOLVES_AT: [time_in_seconds] CHECK_FACET: [facet_name]" after each question.
+Examples:
+- "Will Barcelona score in the first half? RESOLVES_AT: 2700 CHECK_FACET: goals"
+- "Will there be a goal before the 30th minute? RESOLVES_AT: 1800 CHECK_FACET: goals"
+- "Will Barcelona win the match? RESOLVES_AT: 5400 CHECK_FACET: goals"
+
+TEAMS: This match is Barcelona vs Alavés. Use these exact team names in your questions.`;
     
     if (period === 'secondHalf' && this.halfTimeSummary) {
       instructions += `\n\nHALF-TIME SUMMARY:\n${this.halfTimeSummary}\n\nUse this context to create more informed questions for the second half.`;
@@ -230,25 +437,77 @@ class TurnBasedSimulator {
     const userPayload = {
       instructions,
       game: this.currentGameId,
+      teams: { home: 'Barcelona', away: 'Alavés' },
       window: { start: currentTime - 300, end: currentTime },
       stkm: latestSnapshot
     };
 
     try {
       console.log(`🤖 Generating questions for ${period}...`);
-      const response = await generateQuestionsWithOllamaAndFacets(SYSTEM_INSTRUCTION, userPayload, CONFIG.PRIMARY_MODEL);
+      
+      // Try with tools first
+      let response = await generateWithTools({
+        systemInstruction: SYSTEM_INSTRUCTION,
+        userPayload: userPayload,
+        model: CONFIG.PRIMARY_MODEL
+      });
+      
+      // Cache facet data from tool calls for later evaluation
+      this.cacheFacetDataFromResponse(response, currentTime);
       
       if (response.error) {
-        console.error('❌ Ollama error:', response.error);
+        console.error('❌ Gemini error with tools:', response.error);
+        console.log('🔄 Trying simple generation without tools...');
+        
+        // Try simple generation without tools
+        response = await generateSimple({
+          systemInstruction: SYSTEM_INSTRUCTION,
+          userPayload: userPayload,
+          model: CONFIG.PRIMARY_MODEL
+        });
+        
+        if (response.error) {
+          console.error('❌ Simple generation also failed:', response.error);
+          return [];
+        }
+      }
+      
+      console.log(`🔍 Raw Gemini response: "${response.text.substring(0, 200)}..."`);
+      const questions = QuestionGenerator.parseQuestions(response.text);
+      console.log(`📊 Parsed ${questions.length} questions from response`);
+      
+      // If no questions were parsed, return empty array
+      if (questions.length === 0) {
+        console.log('🔄 No questions parsed from response');
         return [];
       }
       
-      const questions = QuestionGenerator.parseQuestions(response.text);
-      return questions;
+      // If we have some questions but not enough, return what we have
+      if (questions.length < CONFIG.QUESTIONS_PER_ROUND) {
+        console.log(`⚠️  Only ${questions.length} questions parsed (expected ${CONFIG.QUESTIONS_PER_ROUND})`);
+      }
+      
+      return questions.slice(0, CONFIG.QUESTIONS_PER_ROUND); // Ensure we don't exceed the limit
     } catch (error) {
       console.error('❌ Error generating questions:', error);
       return [];
     }
+  }
+
+  cacheFacetDataFromResponse(response, currentTime) {
+    // Extract facet data from the LLM response for caching
+    // This is a simplified approach - in practice, we'd need to access the tool call results
+    // For now, we'll cache based on the current time and common facets
+    const commonFacets = ['goals', 'cards', 'shots_on_target', 'possession'];
+    
+    commonFacets.forEach(facet => {
+      const facetKey = `${this.currentGameId}_${facet}_${currentTime}`;
+      // In a real implementation, we'd store the actual facet data here
+      // For now, we'll store a placeholder that indicates data was available
+      this.cachedFacetData.set(facetKey, [{ type: 'placeholder', facet: facet }]);
+    });
+    
+    console.log(`📦 Cached facet data for ${commonFacets.length} facets at ${currentTime}s`);
   }
 
   getCurrentPeriod(currentTime) {
@@ -258,16 +517,29 @@ class TurnBasedSimulator {
   }
 
   shouldGenerateQuestions(period, currentTime) {
+    // Use precise timing to avoid rate limiting issues
     const questionTimes = {
-      firstHalf: [900, 1800], // 15 min, 30 min
-      halfTime: [2700, 3150], // 45 min, 52.5 min  
-      secondHalf: [4050, 4950] // 67.5 min, 82.5 min
+      firstHalf: [900, 1800],    // 15 min, 30 min
+      halfTime: [2700, 3150],    // 45 min, 52.5 min  
+      secondHalf: [4050, 4950]   // 67.5 min, 82.5 min
     };
     
     const times = questionTimes[period] || [];
-    const isGoodTime = times.some(time => Math.abs(currentTime - time) < 150); // Within 2.5 minutes
     
-    return isGoodTime;
+    // Check if we're past any target time and haven't generated questions for it yet
+    for (const targetTime of times) {
+      const timeKey = `${period}-${targetTime}`;
+      
+      // If we haven't generated questions for this target time yet
+      if (!this.generatedQuestions.has(timeKey)) {
+        // And we're past the target time (with some tolerance)
+        if (currentTime >= targetTime - 300) { // 5 minutes before target
+          return true;
+        }
+      }
+    }
+    
+    return false;
   }
 
   async processTimeWindow(lastTime, currentTime) {
@@ -298,13 +570,46 @@ class TurnBasedSimulator {
       return;
     }
 
-    console.log(`\n🎯 ${period.toUpperCase()} QUESTIONS (${Math.floor(currentTime/60)}:${(currentTime%60).toString().padStart(2,'0')})`);
+    // Mark this time window as having generated questions
+    const questionTimes = {
+      firstHalf: [900, 1800],
+      halfTime: [2700, 3150], 
+      secondHalf: [4050, 4950]
+    };
+    
+    const times = questionTimes[period] || [];
+    
+    // Find which target time we're closest to and mark it as used
+    for (const targetTime of times) {
+      const timeKey = `${period}-${targetTime}`;
+      
+      // If we haven't generated questions for this target time yet
+      if (!this.generatedQuestions.has(timeKey)) {
+        // And we're past the target time (with some tolerance)
+        if (currentTime >= targetTime - 300) { // 5 minutes before target
+          this.generatedQuestions.add(timeKey);
+          break; // Only mark one time window per call
+        }
+      }
+    }
+
+    console.log(`\n🎯 ${period.toUpperCase()} QUESTIONS - ROUND ${this.roundNumber}/6 (${Math.floor(currentTime/60)}:${(currentTime%60).toString().padStart(2,'0')})`);
     console.log('='.repeat(60));
     
     // Let user pick 2 questions
     const selectedQuestions = await this.selectQuestions(questions);
     
     if (selectedQuestions.length > 0) {
+      // Track the questions that were asked for future LLM context
+      selectedQuestions.forEach(q => {
+        this.askedQuestions.push({
+          question: q.question,
+          round: this.roundNumber,
+          period: period,
+          gameTime: currentTime
+        });
+      });
+      
       await this.answerQuestions(selectedQuestions, period);
     }
   }
@@ -312,12 +617,13 @@ class TurnBasedSimulator {
   async selectQuestions(questions) {
     console.log('\n📋 Available Questions:');
     questions.forEach((q, i) => {
-      console.log(`${i + 1}. ${q.question}`);
-      console.log(`   Options: ${q.options.join(' | ')}`);
-      console.log('');
+      console.log(`\n${i + 1}. ${q.question}`);
+      console.log('   A) ' + q.options[0]);
+      console.log('   B) ' + q.options[1]);
+      console.log('   C) ' + q.options[2]);
     });
 
-    // Use a more robust readline implementation
+    // Use a more robust readline implementation with timeout
     const readline = await import('readline');
     const rl = readline.createInterface({
       input: process.stdin,
@@ -326,8 +632,27 @@ class TurnBasedSimulator {
     });
 
     return new Promise((resolve) => {
+      let resolved = false;
+      
+      // Auto-select questions after 30 seconds if no input
+      const timeout = setTimeout(() => {
+        if (!resolved) {
+          resolved = true;
+          console.log('\n⏰ Timeout reached, auto-selecting first 2 questions...');
+          const selected = questions.slice(0, 2);
+          console.log(`\n✅ Auto-selected ${selected.length} questions:`);
+          selected.forEach((q, i) => {
+            console.log(`${i + 1}. ${q.question}`);
+          });
+          rl.close();
+          resolve(selected);
+        }
+      }, 30000);
+
       const askForSelection = () => {
-        rl.question(`\n🎯 Select 2 questions (e.g., "1,3"): `, (answer) => {
+        rl.question(`\n🎯 Select 2 questions (e.g., "1,3") or wait 30s for auto-selection: `, (answer) => {
+          if (resolved) return;
+          
           const indices = answer.split(',').map(s => parseInt(s.trim()) - 1).filter(i => i >= 0 && i < questions.length);
           
           if (indices.length === 0) {
@@ -336,6 +661,8 @@ class TurnBasedSimulator {
             return;
           }
           
+          resolved = true;
+          clearTimeout(timeout);
           const selected = indices.slice(0, 2).map(i => questions[i]);
           
           console.log(`\n✅ Selected ${selected.length} questions:`);
@@ -363,7 +690,9 @@ class TurnBasedSimulator {
     for (let i = 0; i < questions.length; i++) {
       const question = questions[i];
       console.log(`\n❓ Question ${i + 1}: ${question.question}`);
-      console.log(`Options: ${question.options.join(' | ')}`);
+      console.log('   A) ' + question.options[0]);
+      console.log('   B) ' + question.options[1]);
+      console.log('   C) ' + question.options[2]);
       
       const answer = await new Promise((resolve) => {
         const askForAnswer = () => {
@@ -388,7 +717,8 @@ class TurnBasedSimulator {
         selectedText: question.options[answer.charCodeAt(0) - 65], // Convert A/B/C to option text
         timestamp: Date.now(),
         gameTime: this.getCurrentGameTime(),
-        timeframe: this.extractTimeframe(question.question),
+        timeframe: question.timeframe || 900, // Use LLM-provided timeframe or default
+        checkFacet: question.checkFacet || 'goals', // Use LLM-specified facet or default
         resolved: false,
         correct: null
       };
@@ -412,17 +742,8 @@ class TurnBasedSimulator {
   }
 
   extractTimeframe(questionText) {
-    // Extract timeframe from question text (e.g., "next 15 minutes" = 900 seconds)
-    const timeMatch = questionText.match(/(\d+)\s*(minute|min|second|sec)/i);
-    if (timeMatch) {
-      const value = parseInt(timeMatch[1]);
-      const unit = timeMatch[2].toLowerCase();
-      if (unit.startsWith('min')) {
-        return value * 60;
-      } else if (unit.startsWith('sec')) {
-        return value;
-      }
-    }
+    // LLM will provide timeframe directly, no need for complex parsing
+    // This is a fallback for backward compatibility
     return 900; // Default 15 minutes
   }
 
@@ -471,7 +792,7 @@ class TurnBasedSimulator {
         .eq('compressed_kind', 'raw')
         .gte('windows.start_sec', startTime)
         .lte('windows.end_sec', endTime)
-        .order('windows.start_sec', { ascending: true });
+        .order('created_at', { ascending: true });
 
       if (error) throw error;
       return events?.map(s => s.raw_json) || [];
@@ -482,34 +803,64 @@ class TurnBasedSimulator {
   }
 
   evaluatePrediction(prediction, events) {
-    // Evaluate if prediction was correct based on actual events
-    const question = prediction.question.toLowerCase();
+    // Use cached facet data for evaluation instead of parsing question text
     const selectedText = prediction.selectedText.toLowerCase();
+    const checkFacet = prediction.checkFacet || 'goals';
     
-    // Simple evaluation logic - can be enhanced
-    if (question.includes('yellow card')) {
-      const hasYellowCard = events.some(event => 
-        event.type === 'card' && event.card_type === 'yellow'
-      );
-      return (selectedText.includes('yes') && hasYellowCard) || 
-             (selectedText.includes('no') && !hasYellowCard);
+    // Get cached facet data for this prediction's timeframe
+    const facetKey = `${this.currentGameId}_${checkFacet}_${prediction.timeframe}`;
+    const facetData = this.cachedFacetData.get(facetKey);
+    
+    if (!facetData) {
+      console.log(`⚠️  No cached facet data found for ${checkFacet} at ${prediction.timeframe}s`);
+      return false; // Default to incorrect if no data available
     }
     
-    if (question.includes('goal')) {
-      const hasGoal = events.some(event => event.type === 'goal');
+    // Simple evaluation based on facet data
+    // This can be enhanced to use LLM for more complex evaluation
+    if (checkFacet === 'goals') {
+      const hasGoal = facetData.some(event => event.type === 'goal');
       return (selectedText.includes('yes') && hasGoal) || 
-             (selectedText.includes('no') && !hasGoal);
+             (selectedText.includes('no') && !hasGoal) ||
+             (selectedText.includes('draw') && !hasGoal);
     }
     
-    // Add more evaluation logic for different question types
-    return false; // Default to incorrect if we can't evaluate
+    if (checkFacet === 'cards') {
+      const hasCard = facetData.some(event => event.type === 'card');
+      return (selectedText.includes('yes') && hasCard) || 
+             (selectedText.includes('no') && !hasCard);
+    }
+    
+    // Default evaluation - can be enhanced with more facet types
+    console.log(`⚠️  No evaluation logic for facet: ${checkFacet}`);
+    return false;
   }
 
   async showFinalResults() {
     console.log('\n🏆 FINAL RESULTS');
-    console.log('='.repeat(30));
-    console.log(`Score: ${this.score}/${this.totalQuestions}`);
-    console.log(`Accuracy: ${this.totalQuestions > 0 ? Math.round((this.score/this.totalQuestions) * 100) : 0}%`);
+    console.log('='.repeat(50));
+    
+    const resolvedPredictions = this.activePredictions.filter(p => p.resolved);
+    const correctPredictions = resolvedPredictions.filter(p => p.correct);
+    
+    console.log(`📊 Final Score: ${correctPredictions.length}/${resolvedPredictions.length} (${this.totalQuestions} total predictions)`);
+    console.log(`🎯 Accuracy: ${resolvedPredictions.length > 0 ? Math.round((correctPredictions.length/resolvedPredictions.length) * 100) : 0}%`);
+    
+    if (resolvedPredictions.length > 0) {
+      console.log('\n📋 Prediction Summary:');
+      resolvedPredictions.forEach((pred, i) => {
+        const status = pred.correct ? '✅' : '❌';
+        console.log(`${i + 1}. ${status} ${pred.question}`);
+        console.log(`   Your answer: ${pred.selectedText}`);
+      });
+    }
+    
+    if (this.activePredictions.length > resolvedPredictions.length) {
+      const unresolved = this.activePredictions.length - resolvedPredictions.length;
+      console.log(`\n⏳ ${unresolved} predictions still pending resolution`);
+    }
+    
+    console.log('\n🎉 Game completed! Thanks for playing!');
   }
 
   async startRealTimeProcessing() {
@@ -562,12 +913,12 @@ class TurnBasedSimulator {
   }
 }
 
-// Export the class for testing
-export { TurnBasedSimulator };
+// Export the classes for testing
+export { TurnBasedSimulator, QuestionGenerator };
 
 // Main execution (only run if this file is executed directly)
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const gameId = process.argv[2] || 'barcelona-alaves-2018-08-18';
+  const gameId = process.argv[2] || 'barcelona-alaves-18-08-18';
   const simulator = new TurnBasedSimulator(gameId);
 
   simulator.start().catch(error => {

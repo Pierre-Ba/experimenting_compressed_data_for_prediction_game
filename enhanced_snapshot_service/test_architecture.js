@@ -25,7 +25,7 @@ async function testArchitecture() {
   
   // Test 2: Check if we have data
   try {
-    const response = await fetch('http://localhost:7070/compressed_snapshots/barcelona-alaves-2018-08-18?count=1');
+    const response = await fetch('http://localhost:7070/compressed_snapshots/barcelona-alaves-18-08-18?count=1');
     const data = await response.json();
     console.log('✅ Data available:', data.count, 'snapshots');
     
@@ -64,7 +64,7 @@ async function testArchitecture() {
   console.log('1. Start enhanced service: npm start');
   console.log('2. Start replay server: node ../sb-replay-server.js ../barcelona-alaves-18-08-18.json');
   console.log('3. Start bridge: node ../snapshot_writer_service/bridge_sse_to_snapshot.js');
-  console.log('4. Start simulator: npm run simulator barcelona-alaves-2018-08-18');
+  console.log('4. Start simulator: npm run simulator barcelona-alaves-18-08-18');
 }
 
 testArchitecture().catch(console.error);

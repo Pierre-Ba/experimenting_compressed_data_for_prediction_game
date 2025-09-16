@@ -103,7 +103,7 @@ async function handleTick(data) {
       try {
         await postJSON(`${SNAPSHOT_URL}/flush`, { gameId: GAME_ID, start, end });
         lastFlushedEnd = end;
-        console.log(`flushed ${start}-${end}`);
+        // console.log(`flushed ${start}-${end}`);
       } catch (err) {
         console.error('flush error:', err.message);
       }
@@ -154,7 +154,7 @@ async function run() {
           start: window.start,
           end: window.end
         });
-        console.log(`flushed ${window.start}-${window.end}`);
+        // console.log(`flushed ${window.start}-${window.end}`);
       }
     } catch (err) {
       console.error('final flush error:', err.message);

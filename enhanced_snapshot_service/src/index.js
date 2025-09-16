@@ -155,7 +155,7 @@ async function flushWindow(gameId, start, end) {
     byGame.delete(key);
     if (byGame.size === 0) eventsByWindow.delete(gameId);
 
-    console.log(`✔ Saved ${gameId} ${start}-${end} | raw ${events.length} events`);
+    // console.log(`✔ Saved ${gameId} ${start}-${end} | raw ${events.length} events`);
   } catch (err) {
     console.error(`✖ Failed to save ${gameId} ${start}-${end}`, err);
   }
