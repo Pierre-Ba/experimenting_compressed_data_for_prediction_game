@@ -1,0 +1,16 @@
+{
+  "name": "enhanced-snapshot-service",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.46.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "simulator": "node src/turn_based_simulator.js",
+    "test": "node test_architecture.js",
+    "test-facets": "node test_facet_ollama_integration.js"
+  }
+}
